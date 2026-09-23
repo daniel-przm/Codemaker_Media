@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>01 · Presentación</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<style>
+  /* Portada */
+  .portada .foto { position: absolute; top: 240px; left: var(--margen); right: -8px; height: 460px; width: auto;
+                   border-radius: var(--radio) 0 0 var(--radio); border-right: none; }
+  .portada .pildora { position: absolute; top: 760px; left: var(--margen); }
+  .portada h1 { position: absolute; top: 860px; left: var(--margen); width: 780px; font-size: 70px; }
+
+  /* Un studio por lámina */
+  .studio .cabecera { position: absolute; top: var(--margen); left: var(--margen); right: var(--margen);
+                      display: flex; justify-content: space-between; align-items: center; }
+  .studio .captura { position: absolute; top: 210px; left: var(--margen); width: 888px; height: 600px; }
+  .studio h2 { position: absolute; top: 870px; left: var(--margen); width: 888px; }
+  .studio p  { position: absolute; top: 1040px; left: var(--margen); width: 740px; }
+
+  /* Cierre */
+  .cierre .foto { position: absolute; top: 240px; left: -8px; width: 560px; height: 460px;
+                  border-radius: 0 var(--radio) var(--radio) 0; border-left: none; }
+  .cierre h2 { position: absolute; top: 290px; left: 610px; right: var(--margen); text-align: right; font-size: 58px; }
+  .cierre .checks { position: absolute; top: 770px; left: var(--margen); right: var(--margen); }
+</style>
+</head>
+<body>
+
+<!-- 1 · Portada -->
+<section class="lamina portada">
+  <img class="logo" src="../../plantilla/marca/logo-blanco.svg" alt="Codemaker 3D">
+  <img class="captura foto" src="img/alumnos-aula.jpg" alt="">
+  <span class="pildora">Hola, somos Codemaker 3D</span>
+  <h1>Diseño 3D, programación y robótica para el aula.</h1>
+  <img class="flechas" src="../../plantilla/marca/flechas.svg" alt="">
+  <div class="pie"><span>@codemaker_3d</span><span>codemaker.es</span></div>
+</section>
+
+<!-- 2-6 · Los cinco studios, de menos a más edad -->
+<section class="lamina studio">
+  <div class="cabecera"><span class="pildora">VoxelStudio</span><span class="etiqueta">Primaria</span></div>
+  <img class="captura" src="img/voxel.jpg" alt="">
+  <h2>Construir por bloques, desde 8 años</h2>
+  <p>La puerta de entrada al 3D para los más pequeños: mundos enteros colocando bloques.</p>
+  <img class="flechas" src="../../plantilla/marca/flechas.svg" alt="">
+  <div class="pie"><span>@codemaker_3d</span><span>codemaker.es</span></div>
+</section>
+
+<section class="lamina studio">
+  <div class="cabecera"><span class="pildora">FormStudio</span><span class="etiqueta">Todas las etapas</span></div>
+  <img class="captura" src="img/form.jpg" alt="">
+  <h2>Modelado orgánico, como plastilina</h2>
+  <p>Personajes y formas redondeadas moldeando figuras simples.</p>
+  <img class="flechas" src="../../plantilla/marca/flechas.svg" alt="">
+  <div class="pie"><span>@codemaker_3d</span><span>codemaker.es</span></div>
+</section>
+
+<section class="lamina studio">
+  <div class="cabecera"><span class="pildora">ModelingStudio</span><span class="etiqueta">ESO · Bachillerato</span></div>
+  <img class="captura" src="img/modeling.jpg" alt="">
+  <h2>Piezas precisas y sus planos acotados</h2>
+  <p>Combina figuras para construir piezas y saca sus planos en sistema europeo.</p>
+  <img class="flechas" src="../../plantilla/marca/flechas.svg" alt="">
+  <div class="pie"><span>@codemaker_3d</span><span>codemaker.es</span></div>
+</section>
+
+<section class="lamina studio">
+  <div class="cabecera"><span class="pildora">GameStudio</span><span class="etiqueta">Primaria · ESO</span></div>
+  <img class="captura" src="img/game.jpg" alt="">
+  <h2>Videojuegos 3D con físicas reales</h2>
+  <p>Monta el escenario, programa lo que ocurre y juégalo al momento.</p>
+  <img class="flechas" src="../../plantilla/marca/flechas.svg" alt="">
+  <div class="pie"><span>@codemaker_3d</span><span>codemaker.es</span></div>
+</section>
+
+<section class="lamina studio">
+  <div class="cabecera"><span class="pildora">RoboticStudio</span><span class="etiqueta">Primaria · ESO</span></div>
+  <img class="captura" src="img/robotic.jpg" alt="">
+  <h2>Un robot con sensores, sin robot físico</h2>
+  <p>Monta sensores en un robot virtual y prográmalo por bloques. Sin comprar hardware.</p>
+  <img class="flechas" src="../../plantilla/marca/flechas.svg" alt="">
+  <div class="pie"><span>@codemaker_3d</span><span>codemaker.es</span></div>
+</section>
+
+<!-- 7 · Cierre -->
+<section class="lamina cierre">
+  <img class="logo derecha" src="../../plantilla/marca/logo-blanco.svg" alt="Codemaker 3D">
+  <img class="captura foto" src="img/alumnos-portatil.jpg" alt="">
+  <h2>Pruébalo gratis en codemaker.es</h2>
+  <ul class="checks">
+    <li>Funciona en el navegador</li>
+    <li>Sin instalar nada</li>
+    <li>Pensado para el currículo español</li>
+    <li>Plan BASIC gratuito</li>
+  </ul>
+  <div class="pie"><span>@codemaker_3d</span><span>codemaker.es</span></div>
+</section>
+
+</body>
+</html>

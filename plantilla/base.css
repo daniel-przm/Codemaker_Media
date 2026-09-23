@@ -1,0 +1,106 @@
+/*
+ * Plantilla de las láminas de Instagram de Codemaker 3D.
+ *
+ * Cada lámina es un <section class="lamina"> de 1080×1350 (4:5, el formato
+ * vertical del feed). render.mjs hace una captura de cada una.
+ *
+ * Todo lo que se repite —color, márgenes, pie, flechas— vive aquí, para que
+ * una publicación solo tenga que escribir su contenido.
+ */
+
+@font-face { font-family: 'Montserrat Alternates'; font-weight: 500; src: url('fuentes/montserrat-alternates-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat Alternates'; font-weight: 600; src: url('fuentes/montserrat-alternates-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat Alternates'; font-weight: 700; src: url('fuentes/montserrat-alternates-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat Alternates'; font-weight: 800; src: url('fuentes/montserrat-alternates-latin-800-normal.woff2') format('woff2'); }
+
+:root {
+  --azul: #507AF2;
+  --azul-oscuro: #1F3A7A;
+  --blanco: #FFFFFF;
+  --verde: #22C55E;
+  --margen: 96px;
+  --radio: 40px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #d9d9d9;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.lamina {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  background: var(--azul);
+  overflow: hidden;
+  flex: none;
+}
+
+/* ---------- Piezas comunes ---------- */
+
+.logo { position: absolute; top: var(--margen); left: var(--margen); height: 88px; }
+.logo.derecha { left: auto; right: var(--margen); }
+
+.pie {
+  position: absolute;
+  left: var(--margen); right: var(--margen); bottom: 64px;
+  display: flex; justify-content: space-between;
+  font-size: 34px; font-weight: 500; opacity: .95;
+}
+
+.flechas { position: absolute; right: var(--margen); bottom: 170px; width: 84px; height: 60px; }
+
+.pildora {
+  display: inline-block;
+  background: var(--blanco);
+  color: var(--azul-oscuro);
+  font-weight: 700;
+  font-size: 32px;
+  padding: 16px 38px;
+  border-radius: 999px;
+}
+
+.captura {
+  display: block;
+  object-fit: cover;
+  border: 8px solid var(--blanco);
+  border-radius: var(--radio);
+  background: #111;
+}
+
+h1, h2 { font-weight: 700; line-height: 1.12; letter-spacing: -0.5px; }
+h1 { font-size: 76px; }
+h2 { font-size: 64px; }
+p  { font-size: 38px; font-weight: 500; line-height: 1.35; }
+
+.etiqueta {
+  font-size: 28px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; opacity: .8;
+}
+
+/* Lista con checks, como la caja de la última lámina */
+.checks {
+  border: 4px solid var(--blanco);
+  border-radius: 32px;
+  background: var(--azul-oscuro);
+  padding: 44px 48px;
+  display: grid;
+  gap: 30px;
+  list-style: none;
+}
+.checks li { display: flex; align-items: center; gap: 22px; font-size: 36px; font-weight: 600; }
+.checks li::before {
+  content: '';
+  flex: none;
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 3px solid var(--blanco);
+  background: var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 64% no-repeat;
+}
