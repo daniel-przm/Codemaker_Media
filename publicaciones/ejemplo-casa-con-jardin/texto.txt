@@ -1,0 +1,9 @@
+Una casa de dos plantas con piscina, terraza, jardín y hasta placas solares, hecha solo con figuras básicas en ModelingStudio 🏡
+
+Todo está a escala: una unidad es un metro. Arquitectura con medidas reales.
+
+💡 Idea para clase: partir de un programa de necesidades (cuántas habitaciones, para qué se usa cada espacio…), diseñar la casa y sacar sus vistas en el modo de dibujo técnico.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #tecnologiaeso #dibujotecnico #diseño3D

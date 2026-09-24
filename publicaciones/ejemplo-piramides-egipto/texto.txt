@@ -1,0 +1,9 @@
+Las pirámides de Guiza, la Esfinge y el Nilo, construidas cubo a cubo en VoxelStudio 🏜️
+
+¿Sabías que las pirámides estaban revestidas de caliza blanca? Por eso aquí son blancas.
+
+💡 Idea para clase: antes de construir, que calculen cuántos cubos lleva una pirámide escalonada de n capas. Historia y geometría en el mismo proyecto.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #antiguoegipto #educacionprimaria #diseño3D
