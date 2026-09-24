@@ -25,8 +25,14 @@ Lo común (color, tipografía Montserrat Alternates, logo, pie, flechas, caja de
 checks) está en `plantilla/base.css` y `plantilla/comun.js`. Los títulos
 largos no se desbordan: la plantilla reduce su letra hasta que caben.
 
-Un studio con `"pro": true` lleva la etiqueta PRO, y su cierre no promete el
-plan gratuito.
+## Normas de contenido
+
+- **Ni planes, ni precios, ni licencias.** No se dice qué studio es BASIC o
+  PRO ni cuánto cuesta: cambia, y una publicación de Instagram no se corrige.
+  Quien quiera saberlo, lo mira en la web.
+- **«Pruébalo gratis» sí vale siempre**: todo se puede probar gratis (el PRO,
+  con 14 días de prueba sin tarjeta).
+- El usuario de Instagram es **@codemaker_3d**.
 
 `publicaciones/01-presentacion` es anterior a las plantillas y lleva su propio
 `carrusel.html`. Sus PNG son los publicados: no se regeneran.

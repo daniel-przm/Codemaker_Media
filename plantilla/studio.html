@@ -57,10 +57,9 @@
 
     lamina('s-cierre',
       logo(),
-      // Un studio PRO no entra en el plan gratuito: el cierre no puede prometerlo
-      h('h2', cierre.titulo || (D.studio.pro ? 'Pruébalo' : 'Pruébalo gratis'), h('br'), cierre.subtitulo || 'en codemaker.es'),
-      checks(cierre.checks || ['Funciona en el navegador', 'Sin instalar nada', 'Pensado para el currículo español',
-                               D.studio.pro ? 'Incluido en el plan PRO' : 'Plan BASIC gratuito']),
+      // «Gratis» siempre vale: todo se puede probar gratis. Planes y precios, no.
+      h('h2', cierre.titulo || 'Pruébalo gratis', h('br'), cierre.subtitulo || 'en codemaker.es'),
+      checks(cierre.checks || ['Funciona en el navegador', 'Sin instalar nada', 'Pensado para el currículo español', 'Guardado en la nube']),
       pie()),
   ]);
 </script>

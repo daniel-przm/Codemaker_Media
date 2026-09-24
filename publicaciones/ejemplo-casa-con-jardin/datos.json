@@ -1,6 +1,8 @@
 {
   "plantilla": "ejemplo",
-  "studio": { "nombre": "ModelingStudio", "pro": false },
+  "studio": {
+    "nombre": "ModelingStudio"
+  },
   "proyecto": "Casa con jardín",
   "imagen": "img/fotograma.jpg"
 }

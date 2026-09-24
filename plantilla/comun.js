@@ -44,11 +44,12 @@ function checks(lista) {
   return h('ul.checks', lista.map((t) => h('li', t)));
 }
 
-/** Etiqueta de un studio: su nombre y, si hace falta, PRO. */
+/**
+ * Etiqueta de un studio: solo su nombre. Ni planes ni precios en Instagram:
+ * qué studio va en qué plan cambia, y una publicación no se puede corregir.
+ */
 function pildoraStudio(studio) {
-  return h('span.grupo-pildoras',
-    h('span.pildora', studio.nombre),
-    studio.pro && h('span.pildora.pro', 'PRO'));
+  return h('span.pildora', studio.nombre);
 }
 
 /**

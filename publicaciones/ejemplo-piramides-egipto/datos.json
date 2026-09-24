@@ -1,0 +1,10 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "VoxelStudio"
+  },
+  "proyecto": "Pirámides de Egipto",
+  "imagen": "img/fotograma.png",
+  "fotogramas": "fotogramas",
+  "fps": 24
+}

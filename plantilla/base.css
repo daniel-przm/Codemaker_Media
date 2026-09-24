@@ -108,7 +108,7 @@ p  { font-size: 38px; font-weight: 500; line-height: 1.35; }
 /* ---------- Añadidos para las plantillas ---------- */
 
 .grupo-pildoras { display: inline-flex; gap: 12px; align-items: center; }
-.pildora.pro { background: transparent; color: var(--blanco); border: 3px solid var(--blanco); padding: 13px 26px; }
+.pildora.pro, .pildora.secundaria { background: transparent; color: var(--blanco); border: 3px solid var(--blanco); padding: 13px 26px; }
 .pildora.destacada { background: var(--verde); color: var(--blanco); }
 
 /* Reels y portadas de destacadas: 1080×1920 (9:16) */

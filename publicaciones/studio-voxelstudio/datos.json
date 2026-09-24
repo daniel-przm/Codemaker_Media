@@ -1,16 +1,35 @@
 {
   "plantilla": "studio",
   "tipo": "presentacion",
-  "studio": { "nombre": "VoxelStudio", "etapa": "Primaria", "pro": false },
+  "studio": {
+    "nombre": "VoxelStudio",
+    "etapa": "Primaria"
+  },
   "portada": {
     "imagen": "img/portada.jpg",
     "titulo": "Construir por bloques, desde 8 años",
     "texto": "La puerta de entrada al 3D para los más pequeños: mundos enteros colocando bloques."
   },
   "laminas": [
-    { "imagen": "img/construccion.png", "titulo": "Construcción en cuadrícula", "texto": "Coloca o quita el bloque exacto donde señalas. Arrastra para construir filas enteras de un gesto." },
-    { "imagen": "img/paleta.png", "titulo": "Paleta de 10 colores", "texto": "Con un azul semitransparente para el agua o el cristal. Pinta bloques ya construidos con un clic." },
-    { "imagen": "img/navegacion.png", "titulo": "La misma navegación en todos los studios", "texto": "Girar, acercar y desplazar con los mismos gestos: los alumnos aprenden una sola forma de moverse en 3D." },
-    { "imagen": "img/guardado.png", "titulo": "Guardado automático en la nube", "texto": "Cada construcción se guarda sola, con una miniatura para que el profesor la vea desde su panel." }
+    {
+      "imagen": "img/construccion.png",
+      "titulo": "Construcción en cuadrícula",
+      "texto": "Coloca o quita el bloque exacto donde señalas. Arrastra para construir filas enteras de un gesto."
+    },
+    {
+      "imagen": "img/paleta.png",
+      "titulo": "Paleta de 10 colores",
+      "texto": "Con un azul semitransparente para el agua o el cristal. Pinta bloques ya construidos con un clic."
+    },
+    {
+      "imagen": "img/navegacion.png",
+      "titulo": "La misma navegación en todos los studios",
+      "texto": "Girar, acercar y desplazar con los mismos gestos: los alumnos aprenden una sola forma de moverse en 3D."
+    },
+    {
+      "imagen": "img/guardado.png",
+      "titulo": "Guardado automático en la nube",
+      "texto": "Cada construcción se guarda sola, con una miniatura para que el profesor la vea desde su panel."
+    }
   ]
 }

@@ -12,7 +12,8 @@
    *              va dentro de esa franja.
    *   rotulo   — PNG transparente que va encima del vídeo durante toda la
    *              órbita. Arriba, lejos del texto y los botones de Instagram,
-   *              que tapan el tercio inferior y el lateral derecho.
+   *              que tapan el tercio inferior y el lateral derecho; y por
+   *              debajo de la barra de progreso y el nombre de una Story.
    *   cierre   — el último segundo y medio: logo y llamada a la acción.
    */
   .e-portada .logo { top: 320px; }
@@ -20,9 +21,9 @@
   .e-portada .captura { position: absolute; top: 580px; left: var(--margen); width: 888px; height: 760px; }
   .e-portada h1 { position: absolute; top: 1390px; left: var(--margen); width: 888px; font-size: 80px; }
 
-  .e-rotulo > .grupo-pildoras { position: absolute; top: 150px; left: var(--margen); }
+  .e-rotulo > .grupo-pildoras { position: absolute; top: 250px; left: var(--margen); }
   .e-rotulo .pildora { box-shadow: 0 6px 24px rgba(0,0,0,.25); }
-  .e-rotulo .pildora.pro { background: rgba(0,0,0,.35); }
+  .e-rotulo .pildora.secundaria { background: rgba(0,0,0,.35); }
 
   .e-cierre .logo { top: 540px; left: 50%; transform: translateX(-50%); height: 190px; }
   .e-cierre h2 { position: absolute; top: 840px; left: var(--margen); right: var(--margen); text-align: center; font-size: 100px; }
@@ -36,7 +37,7 @@
   const D = window.DATOS;
   const etiqueta = (textoProyecto) => h('span.grupo-pildoras',
     h('span.pildora', D.studio.nombre),
-    textoProyecto && h('span.pildora.pro', textoProyecto));
+    textoProyecto && h('span.pildora.secundaria', textoProyecto));
 
   montar([
     nombrar(lamina('vertical e-portada',
@@ -50,7 +51,7 @@
     nombrar(lamina('vertical e-cierre',
       logo(),
       h('h2', { 'data-alto': 260 }, D.cierre?.titulo || `Hazlo tú en ${D.studio.nombre}`),
-      h('p', D.cierre?.texto || (D.studio.pro ? 'Pruébalo en codemaker.es' : 'Pruébalo gratis en codemaker.es')),
+      h('p', D.cierre?.texto || 'Pruébalo gratis en codemaker.es'),
       h('div.pie', h('span', '@codemaker_3d'))), 'cierre'),
   ]);
 </script>
