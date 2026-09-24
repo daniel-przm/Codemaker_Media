@@ -14,15 +14,15 @@
   /* Un studio por lámina */
   .studio .cabecera { position: absolute; top: var(--margen); left: var(--margen); right: var(--margen);
                       display: flex; justify-content: space-between; align-items: center; }
-  .studio .captura { position: absolute; top: 210px; left: var(--margen); width: 888px; height: 600px; }
-  .studio h2 { position: absolute; top: 870px; left: var(--margen); width: 888px; }
-  .studio p  { position: absolute; top: 1040px; left: var(--margen); width: 740px; }
+  .studio .captura { position: absolute; top: 210px; left: var(--margen); width: 888px; height: 472px; }
+  /* Las capturas de la web son 1,91:1; con esta altura se ven enteras, sin recortar */
+  .studio h2 { position: absolute; top: 760px; left: var(--margen); width: 888px; }
+  .studio p  { position: absolute; top: 930px; left: var(--margen); width: 740px; }
 
   /* Cierre */
-  .cierre .foto { position: absolute; top: 240px; left: -8px; width: 560px; height: 460px;
-                  border-radius: 0 var(--radio) var(--radio) 0; border-left: none; }
-  .cierre h2 { position: absolute; top: 290px; left: 610px; right: var(--margen); text-align: right; font-size: 58px; }
-  .cierre .checks { position: absolute; top: 770px; left: var(--margen); right: var(--margen); }
+  .cierre h2 { position: absolute; top: 330px; left: var(--margen); right: var(--margen); font-size: 92px; line-height: 1.05; }
+  .cierre h2 span { display: block; }
+  .cierre .checks { position: absolute; top: 720px; left: var(--margen); right: var(--margen); }
 </style>
 </head>
 <body>
@@ -85,9 +85,8 @@
 
 <!-- 7 · Cierre -->
 <section class="lamina cierre">
-  <img class="logo derecha" src="../../plantilla/marca/logo-blanco.svg" alt="Codemaker 3D">
-  <img class="captura foto" src="img/alumnos-portatil.jpg" alt="">
-  <h2>Pruébalo gratis en codemaker.es</h2>
+  <img class="logo" src="../../plantilla/marca/logo-blanco.svg" alt="Codemaker 3D">
+  <h2>Pruébalo gratis <span>en codemaker.es</span></h2>
   <ul class="checks">
     <li>Funciona en el navegador</li>
     <li>Sin instalar nada</li>
