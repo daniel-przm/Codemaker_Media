@@ -4,5 +4,13 @@
     "nombre": "ModelingStudio"
   },
   "proyecto": "Casa con jardín",
-  "imagen": "img/fotograma.jpg"
+  "imagen": "img/fotograma.jpg",
+  "areas": [
+    "Tecnología",
+    "Educación Plástica"
+  ],
+  "etapas": [
+    "ESO",
+    "Bachillerato"
+  ]
 }

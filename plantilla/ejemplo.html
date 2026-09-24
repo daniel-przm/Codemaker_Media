@@ -24,6 +24,15 @@
   .e-rotulo > .grupo-pildoras { position: absolute; top: 250px; left: var(--margen); }
   .e-rotulo .pildora { box-shadow: 0 6px 24px rgba(0,0,0,.25); }
   .e-rotulo .pildora.secundaria { background: rgba(0,0,0,.35); }
+  /* Áreas y etapas: en qué clases encaja el proyecto. Más pequeñas, debajo. */
+  .chips { position: absolute; left: var(--margen); right: var(--margen); display: flex; flex-wrap: wrap; gap: 10px; }
+  .e-rotulo .chips { top: 350px; }
+  .e-portada .chips { top: 1500px; }
+  .chip { font-size: 26px; font-weight: 600; padding: 9px 22px; border-radius: 999px;
+          color: var(--blanco); background: rgba(0,0,0,.35); border: 2px solid rgba(255,255,255,.55); }
+  .e-portada .chip { background: rgba(255,255,255,.12); }
+  .chip.etapa { background: rgba(80,122,242,.85); border-color: rgba(255,255,255,.85); }
+  .e-portada .chip.etapa { background: var(--azul-oscuro); }
 
   .e-cierre .logo { top: 540px; left: 50%; transform: translateX(-50%); height: 190px; }
   .e-cierre h2 { position: absolute; top: 840px; left: var(--margen); right: var(--margen); text-align: center; font-size: 100px; }
@@ -39,18 +48,24 @@
     h('span.pildora', D.studio.nombre),
     textoProyecto && h('span.pildora.secundaria', textoProyecto));
 
+  // Áreas curriculares y etapas donde el proyecto tiene cabida
+  const chips = () => (D.areas?.length || D.etapas?.length) && h('div.chips',
+    (D.areas || []).map((a) => h('span.chip', a)),
+    (D.etapas || []).map((e) => h('span.chip.etapa', e)));
+
   montar([
     nombrar(lamina('vertical e-portada',
       logo(),
       h('span.grupo-pildoras', h('span.pildora', 'Ejemplo'), pildoraStudio(D.studio)),
       h('img.captura', { src: D.imagen, alt: '' }),
-      h('h1', { 'data-alto': 200 }, D.proyecto)), 'portada'),
+      h('h1', { 'data-alto': 200 }, D.proyecto),
+      chips()), 'portada'),
 
-    nombrar(lamina('vertical transparente e-rotulo', etiqueta(D.proyecto)), 'rotulo'),
+    nombrar(lamina('vertical transparente e-rotulo', etiqueta(D.proyecto), chips()), 'rotulo'),
 
     nombrar(lamina('vertical e-cierre',
       logo(),
-      h('h2', { 'data-alto': 260 }, D.cierre?.titulo || `Hazlo tú en ${D.studio.nombre}`),
+      h('h2', { 'data-alto': 260 }, D.cierre?.titulo || `Llévalo a tu clase con ${D.studio.nombre}`),
       h('p', D.cierre?.texto || 'Pruébalo gratis en codemaker.es'),
       h('div.pie', h('span', '@codemaker_3d'))), 'cierre'),
   ]);

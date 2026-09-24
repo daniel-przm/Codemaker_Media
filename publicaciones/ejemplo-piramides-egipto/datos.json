@@ -6,5 +6,13 @@
   "proyecto": "Pirámides de Egipto",
   "imagen": "img/fotograma.png",
   "fotogramas": "fotogramas",
-  "fps": 24
+  "fps": 24,
+  "areas": [
+    "Ciencias Sociales",
+    "Matemáticas"
+  ],
+  "etapas": [
+    "Primaria",
+    "ESO"
+  ]
 }
