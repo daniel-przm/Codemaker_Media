@@ -18,6 +18,9 @@
 //   "recorte": [primero, último] — solo ese tramo de fotogramas. Para Robotic,
 //              donde el robot hace lo interesante en unos segundos y luego se
 //              va del plano
+//   "recuadro": { "ancho": 1000, "arriba": 450 } — para fotogramas que no son
+//              9:16 (CodeStudio): a qué ancho se escalan y a qué altura van,
+//              para que no los pise el rótulo. Sin él, se centran.
 import ffmpeg from 'ffmpeg-static';
 import { spawnSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
@@ -50,7 +53,9 @@ const r = spawnSync(ffmpeg, [
   '-filter_complex', [
     // Los fotogramas que no son 9:16 (los recuadros de CodeStudio) se centran
     // sobre el fondo oscuro del 3D, sin deformarlos.
-    `[0:v]trim=end_frame=${n},scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=0x111111,setsar=1[v0]`,
+    datos.recuadro
+      ? `[0:v]trim=end_frame=${n},scale=${datos.recuadro.ancho}:-2,pad=1080:1920:(ow-iw)/2:${datos.recuadro.arriba}:color=0x111111,setsar=1[v0]`
+      : `[0:v]trim=end_frame=${n},scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=0x111111,setsar=1[v0]`,
     `[v0][1:v]overlay=0:0,format=yuv420p[vuelta]`,
     `[2:v]scale=1080:1920,setsar=1,format=yuv420p[fin]`,
     `[vuelta][fin]xfade=transition=fade:duration=${FUNDIDO}:offset=${(vuelta - FUNDIDO).toFixed(3)},format=yuv420p[v]`,
