@@ -1,0 +1,11 @@
+{
+  "plantilla": "ejemplo",
+  "studio": { "nombre": "RoboticStudio" },
+  "proyecto": "Siguelíneas con garra",
+  "imagen": "img/fotograma.png",
+  "areas": ["Programación", "Tecnología"],
+  "etapas": ["ESO"],
+  "fotogramas": "fotogramas",
+  "fps": 20,
+  "recorte": [0, 99]
+}

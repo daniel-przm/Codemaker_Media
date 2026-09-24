@@ -15,6 +15,9 @@
 // En datos.json:
 //   "fotogramas": carpeta con 0000.png, 0001.png… (relativa a la publicación, o absoluta)
 //   "fps": los de la grabación (24 si no se dice)
+//   "recorte": [primero, último] — solo ese tramo de fotogramas. Para Robotic,
+//              donde el robot hace lo interesante en unos segundos y luego se
+//              va del plano
 import ffmpeg from 'ffmpeg-static';
 import { spawnSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
@@ -29,8 +32,10 @@ const salida = resolve('ImagenesRRSS', basename(dirPublicacion));
 const fotogramas = resolve(dirPublicacion, datos.fotogramas ?? 'fotogramas');
 const fps = datos.fps ?? 24;
 const CIERRE = 1.5, FUNDIDO = 0.4;
-const n = existsSync(fotogramas) ? readdirSync(fotogramas).filter((f) => /^\d{4}\.png$/.test(f)).length : 0;
-if (!n) { console.error(`No hay fotogramas en ${fotogramas}`); process.exit(1); }
+const hay = existsSync(fotogramas) ? readdirSync(fotogramas).filter((f) => /^\d{4}\.png$/.test(f)).length : 0;
+if (!hay) { console.error(`No hay fotogramas en ${fotogramas}`); process.exit(1); }
+const [primero, ultimo] = datos.recorte ?? [0, hay - 1];
+const n = ultimo - primero + 1;
 for (const f of ['rotulo.png', 'cierre.png']) {
   if (!existsSync(join(salida, f))) { console.error(`Falta ${f}: antes, npm run render -- ${carpeta}`); process.exit(1); }
 }
@@ -38,12 +43,12 @@ const vuelta = n / fps;
 
 const r = spawnSync(ffmpeg, [
   '-y', '-loglevel', 'error',
-  '-framerate', String(fps), '-i', join(fotogramas, '%04d.png'),
+  '-framerate', String(fps), '-start_number', String(primero), '-i', join(fotogramas, '%04d.png'),
   '-i', join(salida, 'rotulo.png'),
   '-loop', '1', '-framerate', String(fps), '-t', String(CIERRE + FUNDIDO), '-i', join(salida, 'cierre.png'),
   '-f', 'lavfi', '-t', String(vuelta + CIERRE), '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100',
   '-filter_complex', [
-    `[0:v]scale=1080:1920,setsar=1[v0]`,
+    `[0:v]trim=end_frame=${n},scale=1080:1920,setsar=1[v0]`,
     `[v0][1:v]overlay=0:0,format=yuv420p[vuelta]`,
     `[2:v]scale=1080:1920,setsar=1,format=yuv420p[fin]`,
     `[vuelta][fin]xfade=transition=fade:duration=${FUNDIDO}:offset=${(vuelta - FUNDIDO).toFixed(3)},format=yuv420p[v]`,

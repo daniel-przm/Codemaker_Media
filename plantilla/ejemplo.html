@@ -58,7 +58,8 @@
       logo(),
       h('span.grupo-pildoras', h('span.pildora', 'Ejemplo'), pildoraStudio(D.studio)),
       h('img.captura', { src: D.imagen, alt: '' }),
-      h('h1', { 'data-alto': 200 }, D.proyecto),
+      // Una línea: los chips van justo debajo
+      h('h1', { 'data-alto': 100 }, D.proyecto),
       chips()), 'portada'),
 
     nombrar(lamina('vertical transparente e-rotulo', etiqueta(D.proyecto), chips()), 'rotulo'),

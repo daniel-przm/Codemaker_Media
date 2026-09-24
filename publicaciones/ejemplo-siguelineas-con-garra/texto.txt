@@ -1,0 +1,9 @@
+Un siguelíneas con una regla más: si hay algo delante, lo coge con la garra, lo deja fuera de la pista y sigue 🤖
+
+Programado por bloques en RoboticStudio, sin comprar ni montar un robot.
+
+💡 Idea para clase: poner un totem justo después de una curva y descubrir por qué ahí el robot se pierde. El orden de las reglas decide lo que hace un robot.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #roboticaeducativa #tecnologiaeso #programacion
