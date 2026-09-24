@@ -1,0 +1,9 @@
+{
+  "plantilla": "destacada",
+  "portadas": [
+    { "nombre": "studios", "icono": "box" },
+    { "nombre": "ejemplos", "icono": "clapperboard" },
+    { "nombre": "blog", "icono": "book-open" },
+    { "nombre": "novedades", "icono": "sparkles" }
+  ]
+}

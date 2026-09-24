@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Plantilla · Studio</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  .cabecera { position: absolute; top: var(--margen); left: var(--margen); right: var(--margen);
+              display: flex; justify-content: space-between; align-items: center; }
+
+  /* 1 · Portada: captura del studio, su frase y una línea */
+  .s-portada .captura { position: absolute; top: 210px; left: var(--margen); width: 888px; height: 472px; }
+  .s-portada h1 { position: absolute; top: 750px; left: var(--margen); width: 888px; font-size: 66px; }
+  .s-portada p  { position: absolute; top: 940px; left: var(--margen); width: 760px; }
+
+  /* 2…n · Una función o una novedad por lámina */
+  .s-detalle h2 { position: absolute; top: 200px; left: var(--margen); width: 888px; font-size: 58px; }
+  .s-detalle .marco { position: absolute; top: 360px; left: 0; right: 0; height: 640px;
+                      display: flex; justify-content: center; align-items: center; }
+  .s-detalle .marco img { max-width: 888px; max-height: 640px; min-height: 560px; width: auto; height: auto; }
+  .s-detalle p { position: absolute; top: 1030px; left: var(--margen); width: 760px; font-size: 36px; }
+
+  /* Cierre: llamada a la acción, sin foto */
+  .s-cierre h2 { position: absolute; top: 330px; left: var(--margen); right: var(--margen); font-size: 92px; line-height: 1.05; }
+  .s-cierre .checks { position: absolute; top: 720px; left: var(--margen); right: var(--margen); }
+</style>
+</head>
+<body>
+<script src="comun.js"></script>
+<script>
+  const D = window.DATOS;
+  const novedad = D.tipo === 'novedad';
+  const total = D.laminas.length;
+
+  const cabecera = (derecha) => h('div.cabecera',
+    h('span.grupo-pildoras',
+      novedad && h('span.pildora.destacada', 'Novedad'),
+      pildoraStudio(D.studio)),
+    h('span.etiqueta', derecha));
+
+  const cierre = D.cierre || {};
+
+  montar([
+    lamina('s-portada',
+      cabecera(D.studio.etapa),
+      h('img.captura', { src: D.portada.imagen, alt: '' }),
+      h('h1', { 'data-alto': 160 }, D.portada.titulo),
+      D.portada.texto && h('p', { 'data-alto': 200 }, D.portada.texto),
+      flechas(), pie()),
+
+    D.laminas.map((l, i) => lamina('s-detalle',
+      cabecera(`${i + 1} / ${total}`),
+      h('h2', { 'data-alto': 150 }, l.titulo),
+      h('div.marco', h('img.captura', { src: l.imagen, alt: '' })),
+      h('p', { 'data-alto': 130 }, l.texto),
+      flechas(), pie())),
+
+    lamina('s-cierre',
+      logo(),
+      // Un studio PRO no entra en el plan gratuito: el cierre no puede prometerlo
+      h('h2', cierre.titulo || (D.studio.pro ? 'Pruébalo' : 'Pruébalo gratis'), h('br'), cierre.subtitulo || 'en codemaker.es'),
+      checks(cierre.checks || ['Funciona en el navegador', 'Sin instalar nada', 'Pensado para el currículo español',
+                               D.studio.pro ? 'Incluido en el plan PRO' : 'Plan BASIC gratuito']),
+      pie()),
+  ]);
+</script>
+</body>
+</html>

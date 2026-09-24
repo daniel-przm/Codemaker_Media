@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Plantilla · Proyecto de ejemplo (Reel)</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /*
+   * Tres piezas para un Reel de 1080×1920:
+   *   portada  — la miniatura. En la cuadrícula del perfil Instagram la recorta
+   *              a 3:4 por el centro (y 240…1680), así que todo lo importante
+   *              va dentro de esa franja.
+   *   rotulo   — PNG transparente que va encima del vídeo durante toda la
+   *              órbita. Arriba, lejos del texto y los botones de Instagram,
+   *              que tapan el tercio inferior y el lateral derecho.
+   *   cierre   — el último segundo y medio: logo y llamada a la acción.
+   */
+  .e-portada .logo { top: 320px; }
+  .e-portada > .grupo-pildoras { position: absolute; top: 460px; left: var(--margen); }
+  .e-portada .captura { position: absolute; top: 580px; left: var(--margen); width: 888px; height: 760px; }
+  .e-portada h1 { position: absolute; top: 1390px; left: var(--margen); width: 888px; font-size: 80px; }
+
+  .e-rotulo > .grupo-pildoras { position: absolute; top: 150px; left: var(--margen); }
+  .e-rotulo .pildora { box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+  .e-rotulo .pildora.pro { background: rgba(0,0,0,.35); }
+
+  .e-cierre .logo { top: 540px; left: 50%; transform: translateX(-50%); height: 190px; }
+  .e-cierre h2 { position: absolute; top: 840px; left: var(--margen); right: var(--margen); text-align: center; font-size: 100px; }
+  .e-cierre p { position: absolute; top: 1160px; left: var(--margen); right: var(--margen); text-align: center; font-size: 54px; }
+  .e-cierre .pie { justify-content: center; bottom: 120px; }
+</style>
+</head>
+<body>
+<script src="comun.js"></script>
+<script>
+  const D = window.DATOS;
+  const etiqueta = (textoProyecto) => h('span.grupo-pildoras',
+    h('span.pildora', D.studio.nombre),
+    textoProyecto && h('span.pildora.pro', textoProyecto));
+
+  montar([
+    nombrar(lamina('vertical e-portada',
+      logo(),
+      h('span.grupo-pildoras', h('span.pildora', 'Ejemplo'), pildoraStudio(D.studio)),
+      h('img.captura', { src: D.imagen, alt: '' }),
+      h('h1', { 'data-alto': 200 }, D.proyecto)), 'portada'),
+
+    nombrar(lamina('vertical transparente e-rotulo', etiqueta(D.proyecto)), 'rotulo'),
+
+    nombrar(lamina('vertical e-cierre',
+      logo(),
+      h('h2', { 'data-alto': 260 }, D.cierre?.titulo || `Hazlo tú en ${D.studio.nombre}`),
+      h('p', D.cierre?.texto || (D.studio.pro ? 'Pruébalo en codemaker.es' : 'Pruébalo gratis en codemaker.es')),
+      h('div.pie', h('span', '@codemaker_3d'))), 'cierre'),
+  ]);
+</script>
+</body>
+</html>

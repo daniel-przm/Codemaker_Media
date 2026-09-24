@@ -1,0 +1,18 @@
+{
+  "plantilla": "blog",
+  "articulo": "https://codemaker.es/blog/robotica-educativa-sin-robot-simulador-aula",
+  "titulo": "Cómo enseñar robótica sin kits físicos: los simuladores educativos.",
+  "portada": { "imagen": "img/portada.jpg" },
+  "desarrollo": {
+    "imagen": "img/desarrollo.jpg",
+    "parrafos": [
+      "Precios elevados, baterías descargadas, cables que se rompen… si eres profe de robótica, ya sabes las complicaciones de enseñar esta tecnología en el aula.",
+      "Hoy hablamos sobre los simuladores, una alternativa real que permite enseñar robótica sin limitaciones."
+    ]
+  },
+  "cierre": {
+    "imagen": "img/cierre.jpg",
+    "texto": "Puedes leer el artículo en **codemaker.es/blog** y probar nuestro simulador gratis.",
+    "checks": ["Funciona en el navegador", "Sin kits físicos ni averías", "Cada alumno en su propio entorno", "Plan BASIC gratuito"]
+  }
+}

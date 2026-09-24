@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Plantilla · Entrada de blog</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* 1 · Portada: foto que se sale por la derecha, píldora y título */
+  .b-portada .foto { position: absolute; top: 240px; left: var(--margen); right: -8px; width: auto; height: 520px;
+                     border-radius: var(--radio) 0 0 var(--radio); border-right: none; }
+  .b-portada .pildora { position: absolute; top: 820px; left: var(--margen); }
+  .b-portada h1 { position: absolute; top: 915px; left: var(--margen); width: 780px; font-size: 70px; }
+
+  /* 2 · Desarrollo: captura arriba y dos párrafos */
+  .b-desarrollo .captura { position: absolute; top: var(--margen); left: var(--margen); width: 888px; height: 520px; }
+  .b-desarrollo .texto { position: absolute; top: 680px; left: var(--margen); width: 760px;
+                         display: grid; gap: 34px; font-size: 38px; }
+  .b-desarrollo .texto p { font-size: inherit; }
+
+  /* 3 · Cierre: foto que se sale por la izquierda, logo y llamada al blog */
+  .b-cierre .foto { position: absolute; top: 240px; left: -8px; width: 500px; height: 500px;
+                    border-radius: 0 var(--radio) var(--radio) 0; border-left: none; }
+  .b-cierre .pildora { position: absolute; top: 260px; right: var(--margen); }
+  .b-cierre .llamada { position: absolute; top: 380px; left: 550px; right: var(--margen);
+                       text-align: right; font-size: 44px; font-weight: 600; line-height: 1.25; }
+  .b-cierre .llamada strong { font-weight: 800; }
+  .b-cierre .checks { position: absolute; top: 800px; left: var(--margen); right: var(--margen); }
+</style>
+</head>
+<body>
+<script src="comun.js"></script>
+<script>
+  const D = window.DATOS;
+  const web = D.web || 'codemaker.es/blog';
+  // «**texto**» en el JSON sale en negrita
+  const conNegritas = (t) => t.split(/\*\*(.+?)\*\*/).map((trozo, i) => i % 2 ? h('strong', trozo) : trozo);
+
+  montar([
+    lamina('b-portada',
+      logo(),
+      h('img.captura.foto', { src: D.portada.imagen, alt: '' }),
+      h('span.pildora', D.portada.pildora || 'Nueva publicación en el blog'),
+      h('h1', { 'data-alto': 330 }, D.titulo),
+      flechas(), pie(web)),
+
+    lamina('b-desarrollo',
+      h('img.captura', { src: D.desarrollo.imagen, alt: '' }),
+      h('div.texto', { 'data-alto': 420 }, D.desarrollo.parrafos.map((p) => h('p', p))),
+      flechas(), pie(web)),
+
+    lamina('b-cierre',
+      h('img.captura.foto', { src: D.cierre.imagen, alt: '' }),
+      logo('derecha'),
+      h('span.pildora', D.cierre.pildora || 'Sigue en nuestro blog'),
+      h('p.llamada', { 'data-alto': 370 }, conNegritas(D.cierre.texto || 'Puedes leer el artículo completo en **codemaker.es/blog**')),
+      D.cierre.checks && checks(D.cierre.checks),
+      pie(web)),
+  ]);
+</script>
+</body>
+</html>
