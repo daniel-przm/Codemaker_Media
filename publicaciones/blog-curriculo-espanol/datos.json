@@ -1,0 +1,26 @@
+{
+  "plantilla": "blog",
+  "articulo": "https://codemaker.es/blog/suite-codemaker-curriculo-espanol",
+  "titulo": "Software educativo hecho para el currículo español (y no traducido después)",
+  "portada": {
+    "imagen": "img/portada.jpg",
+    "encuadre": "center 15%"
+  },
+  "desarrollo": {
+    "imagen": "img/planos.png",
+    "parrafos": [
+      "Casi todo el software 3D y de programación que llega al aula viene de fuera y se traduce después. La traducción cambia la interfaz, pero no qué se enseña, cómo se representa ni qué evidencia deja.",
+      "Un ejemplo: España dibuja las vistas en sistema europeo; Estados Unidos, al revés. En ModelingStudio salen como se corrigen aquí."
+    ]
+  },
+  "cierre": {
+    "imagen": "img/cierre.png",
+    "texto": "Lee el artículo completo en **codemaker.es/blog**, con cuatro ejemplos y dónde encaja cada studio.",
+    "checks": [
+      "Vistas en sistema europeo",
+      "Isométrica y caballera de verdad",
+      "Los policubos de Primaria, en digital",
+      "Evidencias evaluables"
+    ]
+  }
+}

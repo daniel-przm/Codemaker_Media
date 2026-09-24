@@ -1,0 +1,15 @@
+Nuevo en el blog: software educativo hecho para el currículo español (y no traducido después) 📐
+
+Casi todo el software 3D y de programación que llega al aula viene de fuera y se traduce a posteriori. La traducción cambia la interfaz, pero no qué se enseña, cómo se representa ni qué evidencia deja para evaluar.
+
+En el artículo, cuatro ejemplos que un jefe de departamento puede comprobar en cinco minutos:
+📐 Las vistas en sistema europeo, como se corrigen aquí
+🧊 Perspectivas isométrica y caballera, las de verdad
+🟦 Los policubos que cita el currículo de Matemáticas de Primaria, en digital
+🏛️ Un museo de clase para Historia, hecho en GameStudio
+
+Y una tabla con dónde encaja cada studio en tu programación LOMLOE.
+
+📖 Léelo en codemaker.es/blog (enlace en el perfil)
+
+#LOMLOE #claustrovirtual #programaciondidactica #dibujotecnico #recursoseducativos
