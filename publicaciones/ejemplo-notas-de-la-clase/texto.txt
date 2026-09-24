@@ -1,0 +1,11 @@
+Un programa en Java… y lo que hace el ordenador por dentro mientras se ejecuta 💻
+
+Primero el código: guardar cinco notas en un array, sumarlas con un bucle for y sacar la media. Después, la máquina en 3D: cada línea escribe y lee en la memoria, y cada dato viaja por el bus hasta el procesador y vuelve.
+
+Así se ve lo que el código no cuenta: el array son cinco celdas seguidas de 4 bytes, y con la lupa se leen los 32 bits de cada número.
+
+💡 Idea para clase: quitar el (double) de la media y descubrir por qué sale 6 y no 6.6.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #programacion #java #tecnologiaeso

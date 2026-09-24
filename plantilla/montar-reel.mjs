@@ -48,7 +48,9 @@ const r = spawnSync(ffmpeg, [
   '-loop', '1', '-framerate', String(fps), '-t', String(CIERRE + FUNDIDO), '-i', join(salida, 'cierre.png'),
   '-f', 'lavfi', '-t', String(vuelta + CIERRE), '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100',
   '-filter_complex', [
-    `[0:v]trim=end_frame=${n},scale=1080:1920,setsar=1[v0]`,
+    // Los fotogramas que no son 9:16 (los recuadros de CodeStudio) se centran
+    // sobre el fondo oscuro del 3D, sin deformarlos.
+    `[0:v]trim=end_frame=${n},scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=0x111111,setsar=1[v0]`,
     `[v0][1:v]overlay=0:0,format=yuv420p[vuelta]`,
     `[2:v]scale=1080:1920,setsar=1,format=yuv420p[fin]`,
     `[vuelta][fin]xfade=transition=fade:duration=${FUNDIDO}:offset=${(vuelta - FUNDIDO).toFixed(3)},format=yuv420p[v]`,

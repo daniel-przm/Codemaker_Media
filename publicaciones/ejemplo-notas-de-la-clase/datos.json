@@ -1,0 +1,10 @@
+{
+  "plantilla": "ejemplo",
+  "studio": { "nombre": "CodeStudio" },
+  "proyecto": "Las notas de la clase",
+  "imagen": "img/fotograma.png",
+  "areas": ["Programación", "Matemáticas"],
+  "etapas": ["ESO", "Bachillerato"],
+  "fotogramas": "fotogramas",
+  "fps": 12
+}

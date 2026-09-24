@@ -1,0 +1,7 @@
+Alumnos de nuestros cursos de @codemaker_jaen, en Jaén, programando un robot siguelíneas en RoboticStudio 🤖
+
+Sin kits, sin cables y sin baterías: el robot, sus sensores y la pista están en el navegador, y el programa se escribe por bloques. Si el robot se sale en una curva, se ve al momento y se arregla en el mismo sitio.
+
+Pruébalo gratis en codemaker.es
+
+#roboticaeducativa #Jaen #claustrovirtual #programacion #STEAM
