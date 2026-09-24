@@ -1,0 +1,9 @@
+Un diplodocus con su cuello y su cola larguísimos, modelado en FormStudio 🦕
+
+Parte de la plantilla de cuadrúpedo: el cuello y la cola salen alargando por extrusión, como si fuera plastilina digital.
+
+💡 Idea para clase: investigar cuánto medía de verdad un diplodocus y compararlo con un animal de hoy. Prehistoria y proporciones del cuerpo en el mismo proyecto.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #dinosaurios #educacionprimaria #diseño3D

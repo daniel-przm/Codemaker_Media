@@ -1,0 +1,10 @@
+{
+  "plantilla": "ejemplo",
+  "studio": { "nombre": "FormStudio" },
+  "proyecto": "Diplodocus",
+  "imagen": "img/fotograma.png",
+  "areas": ["Ciencias Naturales"],
+  "etapas": ["Primaria"],
+  "fotogramas": "fotogramas",
+  "fps": 24
+}
