@@ -1,0 +1,18 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "GameStudio"
+  },
+  "proyecto": "El valle escondido",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Extraescolares",
+    "Videojuegos"
+  ],
+  "etapas": [
+    "Primaria",
+    "ESO"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 24
+}

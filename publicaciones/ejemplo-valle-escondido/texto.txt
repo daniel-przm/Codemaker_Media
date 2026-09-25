@@ -1,0 +1,13 @@
+Un valle entero diseñado en GameStudio 🏔️🌊
+
+Montañas esculpidas con las cumbres nevadas, un río que baja hasta el lago, una aldea con su plaza, una granja con sus animales, molinos que giran y bosques por todas partes.
+
+Y encima, un juego: seis cofres escondidos por el valle, y los aldeanos dan pistas cuando te acercas 🗝️
+
+💡 Idea para clase: que cada alumno esconda su propio cofre en el valle y programe la pista del aldeano que lo guarda. Diseño del mundo, narrativa y programación en un mismo proyecto.
+
+Perfecto para extraescolares y talleres de videojuegos.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #videojuegoseducativos #extraescolares #diseño3D #gamedesign #programacion
