@@ -14,9 +14,9 @@
 @font-face { font-family: 'Montserrat Alternates'; font-weight: 800; src: url('fuentes/montserrat-alternates-latin-800-normal.woff2') format('woff2'); }
 
 :root {
-  /* Fondo de las láminas: azul oscuro. El azul claro de antes (#507AF2), en
-     toda la cuadrícula, cansaba; el color lo ponen las capturas y las fotos. */
-  --azul: #0E1A33;
+  /* Fondo de las láminas: el azul de la marca. El blog lo cambia por azul
+     oscuro (blog.html): en toda la cuadrícula, el claro cansaba. */
+  --azul: #507AF2;
   --azul-marca: #507AF2;
   --azul-oscuro: #1F3A7A;
   --blanco: #FFFFFF;
