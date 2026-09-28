@@ -9,7 +9,7 @@ Las imágenes de las redes sociales de Codemaker 3D, y las plantillas que las ge
 2. `npm install` (una vez) y `npm run render -- publicaciones/<nombre>`.
 3. Los PNG salen en `ImagenesRRSS/<nombre>/`.
 4. Metricool no admite ficheros, solo URL públicas: se programa con las de
-   `raw.githubusercontent.com` de este repo. Metricool descarga las imágenes en
+   `raw.githubusercontent.com` de este repo, fijadas al SHA del commit. Metricool descarga las imágenes en
    cuanto se programa el post y se queda una copia, así que después no dependen del repo.
 
 ## Plantillas (`plantilla/`)
@@ -27,16 +27,23 @@ largos no se desbordan: la plantilla reduce su letra hasta que caben.
 
 ## Los Reels de ejemplo
 
-1. La toma, en Codemaker_App: `npm run showreel:planos -- --instagram <nombre>`
-   (el proyecto usado, en 4:5) o `npm run ejemplos:grabar` (la vuelta de 360°).
-   Sus fotogramas, en `publicaciones/<nombre>/fotogramas/` (no se versionan).
-2. `npm run render -- publicaciones/<nombre>`: portada, rótulo y cierre.
-3. `npm run reel -- publicaciones/<nombre>`: monta `ImagenesRRSS/<nombre>/reel.mp4`.
-4. **La música**: si falta `publicaciones/<nombre>/musica.wav`, el paso 3 dice
-   el comando exacto para generarla en Codemaker_App, a la medida del Reel.
-   Es la del anuncio del showreel: el groove mientras se ve el proyecto y el
-   golpe de la marca justo en el cierre. Sintetizada, sin licencias. Se
-   genera y se vuelve a montar.
+Se enseña el proyecto **usándose**: el juego jugado, el robot resolviendo, las
+últimas piezas colocándose. La aplicación (Codemaker_App) se usa como
+herramienta, sin tocarla: tiene que estar clonada al lado, con `npm ci` hecho
+(o `CODEMAKER_APP=<ruta>`).
+
+1. **La toma**, en `tomas/<studio>-<nombre>.mjs`: qué ejemplo carga y qué pasa
+   en cada fotograma. Cómo se escribe: `tomas/LEEME.md`.
+2. `publicaciones/<nombre>/datos.json` con `"toma": "<id de la toma>"`.
+3. `npm run grabar -- publicaciones/<nombre> [--rapido]`: la graba con el motor
+   de planos de la aplicación y deja sus fotogramas en la publicación.
+4. `npm run render -- publicaciones/<nombre>`: portada, rótulo y cierre.
+5. `npm run reel -- publicaciones/<nombre>`: `ImagenesRRSS/<nombre>/reel.mp4`,
+   con la música del showreel a su medida, que se genera sola la primera vez
+   (`musica.wav`; para rehacerla, se borra).
+
+El procedimiento de cada semana, de la cola del calendario a Metricool:
+`.claude/commands/publicar-semana.md`. Lo que toca: `CALENDARIO.md`.
 
 ## Normas de contenido
 

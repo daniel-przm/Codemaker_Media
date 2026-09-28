@@ -9,17 +9,12 @@
 //
 //   la vuelta, con el rótulo encima  →  fundido  →  el cierre, 1,5 segundos
 //
-// 1080×1920 y H.264. Con música si la publicación tiene su `musica.wav`; si
-// no, una pista en silencio: Instagram acepta vídeos mudos, pero algunos pasos
-// intermedios fallan con uno sin pista de audio.
-//
-// La música la genera la aplicación (Codemaker_App), a la medida del Reel: la
-// del anuncio, con el groove mientras se ve el proyecto y el golpe de la marca
-// en el cierre. Este script dice al final el comando exacto:
-//
-//   npm run showreel:musica-reel -- --accion <s> --salida <publicación>/musica.wav
-//
-// y después se vuelve a montar.
+// 1080×1920, H.264 y la música de los Reels (`musica.mjs`): la del anuncio del
+// showreel, a la medida de este vídeo, con el golpe de la marca justo en el
+// fundido al cierre. Se genera sola la primera vez, en
+// `publicaciones/<nombre>/musica.wav`; para rehacerla, se borra ese fichero.
+// Con `"musica": false` en datos.json, una pista en silencio (Instagram acepta
+// vídeos mudos, pero algunos pasos intermedios fallan sin pista de audio).
 //
 // En datos.json:
 //   "fotogramas": carpeta con 0000.png, 0001.png… (relativa a la publicación, o absoluta)
@@ -53,7 +48,12 @@ for (const f of ['rotulo.png', 'cierre.png']) {
 }
 const vuelta = n / fps;
 const musica = join(dirPublicacion, 'musica.wav');
-const conMusica = existsSync(musica);
+const conMusica = datos.musica !== false;
+if (conMusica && !existsSync(musica)) {
+  const { escribirMusica } = await import('./musica.mjs');
+  escribirMusica(musica, vuelta - FUNDIDO, CIERRE + FUNDIDO);
+  console.log(`Música nueva: ${musica}`);
+}
 
 const r = spawnSync(ffmpeg, [
   '-y', '-loglevel', 'error',
@@ -80,5 +80,3 @@ const r = spawnSync(ffmpeg, [
 ], { stdio: 'inherit' });
 if (r.status !== 0) process.exit(r.status ?? 1);
 console.log(join(salida, 'reel.mp4'), `(${(vuelta + CIERRE).toFixed(1)} s, ${conMusica ? 'con música' : 'sin música'})`);
-// El golpe de la música va donde empieza el fundido al cierre.
-if (!conMusica) console.log(`Para la música, en Codemaker_App:\n  npm run showreel:musica-reel -- --accion ${(vuelta - FUNDIDO).toFixed(3)} --cierre ${(CIERRE + FUNDIDO).toFixed(1)} --salida ${musica}`);

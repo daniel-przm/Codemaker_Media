@@ -1,3 +1,5 @@
 node_modules/
 # Los fotogramas de una grabación pesan cientos de megas y se regeneran con npm run ejemplos:grabar
 publicaciones/*/fotogramas/
+# Las tomas grabadas: se regeneran con npm run grabar
+grabaciones/

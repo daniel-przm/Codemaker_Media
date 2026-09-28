@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "grabar": "node plantilla/grabar.mjs",
     "render": "node plantilla/render.mjs",
     "reel": "node plantilla/montar-reel.mjs"
   },
