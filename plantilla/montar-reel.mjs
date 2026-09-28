@@ -9,8 +9,17 @@
 //
 //   la vuelta, con el rótulo encima  →  fundido  →  el cierre, 1,5 segundos
 //
-// 1080×1920, H.264 y una pista de audio en silencio: Instagram acepta vídeos
-// mudos, pero algunos pasos intermedios fallan con uno sin pista de audio.
+// 1080×1920 y H.264. Con música si la publicación tiene su `musica.wav`; si
+// no, una pista en silencio: Instagram acepta vídeos mudos, pero algunos pasos
+// intermedios fallan con uno sin pista de audio.
+//
+// La música la genera la aplicación (Codemaker_App), a la medida del Reel: la
+// del anuncio, con el groove mientras se ve el proyecto y el golpe de la marca
+// en el cierre. Este script dice al final el comando exacto:
+//
+//   npm run showreel:musica-reel -- --accion <s> --salida <publicación>/musica.wav
+//
+// y después se vuelve a montar.
 //
 // En datos.json:
 //   "fotogramas": carpeta con 0000.png, 0001.png… (relativa a la publicación, o absoluta)
@@ -43,13 +52,17 @@ for (const f of ['rotulo.png', 'cierre.png']) {
   if (!existsSync(join(salida, f))) { console.error(`Falta ${f}: antes, npm run render -- ${carpeta}`); process.exit(1); }
 }
 const vuelta = n / fps;
+const musica = join(dirPublicacion, 'musica.wav');
+const conMusica = existsSync(musica);
 
 const r = spawnSync(ffmpeg, [
   '-y', '-loglevel', 'error',
   '-framerate', String(fps), '-start_number', String(primero), '-i', join(fotogramas, '%04d.png'),
   '-i', join(salida, 'rotulo.png'),
   '-loop', '1', '-framerate', String(fps), '-t', String(CIERRE + FUNDIDO), '-i', join(salida, 'cierre.png'),
-  '-f', 'lavfi', '-t', String(vuelta + CIERRE), '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100',
+  ...(conMusica
+    ? ['-i', musica]
+    : ['-f', 'lavfi', '-t', String(vuelta + CIERRE), '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100']),
   '-filter_complex', [
     // Los fotogramas que no son 9:16 (los recuadros de CodeStudio) se centran
     // sobre el fondo oscuro del 3D, sin deformarlos.
@@ -62,8 +75,10 @@ const r = spawnSync(ffmpeg, [
   ].join(';'),
   '-map', '[v]', '-map', '3:a',
   '-c:v', 'libx264', '-preset', 'slow', '-crf', '18', '-r', String(fps), '-pix_fmt', 'yuv420p',
-  '-c:a', 'aac', '-b:a', '128k', '-shortest', '-movflags', '+faststart',
+  '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart',
   join(salida, 'reel.mp4'),
 ], { stdio: 'inherit' });
 if (r.status !== 0) process.exit(r.status ?? 1);
-console.log(join(salida, 'reel.mp4'), `(${(vuelta + CIERRE).toFixed(1)} s)`);
+console.log(join(salida, 'reel.mp4'), `(${(vuelta + CIERRE).toFixed(1)} s, ${conMusica ? 'con música' : 'sin música'})`);
+// El golpe de la música va donde empieza el fundido al cierre.
+if (!conMusica) console.log(`Para la música, en Codemaker_App:\n  npm run showreel:musica-reel -- --accion ${(vuelta - FUNDIDO).toFixed(3)} --cierre ${(CIERRE + FUNDIDO).toFixed(1)} --salida ${musica}`);
