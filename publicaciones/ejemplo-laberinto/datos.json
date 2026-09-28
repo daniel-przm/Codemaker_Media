@@ -1,0 +1,11 @@
+{
+  "plantilla": "ejemplo",
+  "studio": { "nombre": "RoboticStudio" },
+  "proyecto": "Laberinto",
+  "imagen": "img/fotograma.png",
+  "areas": ["Tecnología", "Programación"],
+  "etapas": ["Primaria", "ESO"],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": { "ancho": 1080, "arriba": 430 }
+}

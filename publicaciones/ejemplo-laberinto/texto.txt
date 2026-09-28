@@ -1,0 +1,13 @@
+Un robot que sale de un laberinto que no conoce 🤖🧩
+
+No tiene mapa: solo un sensor de distancia y una regla. En cada casilla gira a la derecha y, mientras tenga pared delante, gira a la izquierda. Así, casilla a casilla, hasta la meta.
+
+Es la regla de la mano derecha, un algoritmo de verdad: un bucle, condiciones anidadas y un objetivo. Y todo en el simulador de RoboticStudio, sin comprar ni un robot.
+
+¿Tus alumnos sabrían explicar por qué funciona?
+
+💡 Idea para clase: programar la regla de la mano izquierda y comparar cuántos pasos da cada una. ¿Hay algún laberinto donde falle?
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #roboticaeducativa #pensamientocomputacional #algoritmos #tecnologiaeso #programacion #steam
