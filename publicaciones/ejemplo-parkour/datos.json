@@ -1,0 +1,19 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "GameStudio"
+  },
+  "proyecto": "Parkour sobre la lava",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Programación",
+    "Videojuegos"
+  ],
+  "etapas": [
+    "Primaria",
+    "ESO"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": { "ancho": 1080, "arriba": 430 }
+}

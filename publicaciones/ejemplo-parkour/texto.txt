@@ -1,0 +1,13 @@
+Saltar de plataforma en plataforma sin tocar la lava 🔥
+
+Un juego completo hecho en GameStudio: plataformas que se mueven, un ascensor, monedas que dan puntos y tres vidas. Si tocas la lava, vuelves a la salida.
+
+Cada plataforma se mueve con su propio bloque «por siempre», y los tres corren a la vez. Eventos, bucles y mucha prueba y error… hasta que el nivel se puede pasar 🎮
+
+¿Tus alumnos serían capaces de programar uno así?
+
+💡 Idea para clase: que cada alumno diseñe su propio nivel y lo pruebe un compañero. Si nadie llega a la bandera, toca ajustar los saltos.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #videojuegoseducativos #programacion #aprenderaprogramar #tecnologiaeso #gamedesign
