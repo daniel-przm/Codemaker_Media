@@ -1,0 +1,15 @@
+Nuevo en el blog: una alternativa a Blender para el aula 🐙
+
+Blender es la referencia del modelado orgánico, pero no está pensado para una sesión de 55 minutos: hay que instalarlo, pide un buen equipo y cuesta horas sacar el primer resultado.
+
+FormStudio usa la misma técnica —la subdivisión de superficies— en el navegador:
+🟣 Formas de partida y plantillas de cabeza, muñeco y cuadrúpedo
+🖱️ Dos modos de trabajo: objeto y edición
+✂️ Extruir, inset, crease y loop cut
+🪞 Simetría con un clic, para modelar personajes en la mitad de tiempo
+
+Y en el artículo, lo que hace un alumno en su primera sesión.
+
+📖 Léelo en codemaker.es/blog (enlace en el perfil)
+
+#claustrovirtual #blender #diseño3D #educacionplastica #modelado3D #recursoseducativos

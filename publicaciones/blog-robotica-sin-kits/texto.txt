@@ -1,0 +1,15 @@
+Nuevo en el blog: cómo enseñar robótica sin kits físicos 🤖
+
+Baterías descargadas, piezas que se pierden, cables que se sueltan y un robot para cuatro alumnos, mientras tres miran. Si das robótica, ya lo conoces.
+
+En el artículo contamos qué se aprende con un simulador, y por qué no es peor:
+💻 La programación es exactamente la misma
+📡 Los sensores funcionan igual
+🐞 Depurar es idéntico: probar, ver qué falla y corregir
+⚡ Y se itera más rápido: reiniciar es instantáneo
+
+Además, qué buscar en un simulador para el aula.
+
+📖 Léelo en codemaker.es/blog (enlace en el perfil)
+
+#claustrovirtual #roboticaeducativa #tecnologiaeso #pensamientocomputacional #recursoseducativos #STEAM

@@ -1,0 +1,25 @@
+{
+  "plantilla": "blog",
+  "articulo": "https://codemaker.es/blog/alternativa-blender-aula-modelado-organico/",
+  "titulo": "Alternativa a Blender para el aula: escultura digital sin curva de aprendizaje",
+  "portada": {
+    "imagen": "img/portada.png"
+  },
+  "desarrollo": {
+    "imagen": "img/desarrollo.png",
+    "parrafos": [
+      "Blender es la referencia del modelado orgánico, pero no está pensado para una sesión de 55 minutos: hay que instalarlo, pide un buen equipo y cuesta horas empezar.",
+      "FormStudio usa la misma técnica —la subdivisión de superficies— en el navegador, con dos modos de trabajo y ocho herramientas."
+    ]
+  },
+  "cierre": {
+    "imagen": "img/cierre.jpg",
+    "texto": "Lee el artículo completo en **codemaker.es/blog**, con lo que hace un alumno en su primera sesión.",
+    "checks": [
+      "Sin instalar nada",
+      "Formas y plantillas de partida",
+      "Extruir, inset y loop cut",
+      "Simetría con un clic"
+    ]
+  }
+}

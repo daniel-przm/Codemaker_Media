@@ -1,0 +1,16 @@
+Nueva situación de aprendizaje en el blog: el robot siguelíneas, para Tecnología y Digitalización de 2.º y 3.º de ESO 🤖
+
+El hospital del barrio quiere que un robot lleve las medicinas desde la farmacia hasta las plantas, siguiendo una línea pintada en el suelo. Y a veces alguien deja un carro en medio del pasillo… Tu clase diseña el recorrido y programa el robot.
+
+Seis sesiones de 55 minutos, escritas para llevarlas al aula tal cual:
+🔦 ¿Cómo sabe un robot por dónde ir?
+🧩 Del problema al algoritmo
+🐞 Depurar cuando el robot no hace lo que pensabas
+🏥 El circuito del hospital, y el carro en el pasillo
+📋 Presentación y ficha técnica
+
+Con competencias, criterios y saberes del RD 217/2022, atención a la diversidad (DUA) y rúbrica. Un robot simulado por pareja, sin comprar ni un kit.
+
+📖 Léela completa en codemaker.es/blog (enlace en el perfil)
+
+#claustrovirtual #situaciondeaprendizaje #LOMLOE #roboticaeducativa #tecnologiaeso #programaciondidactica

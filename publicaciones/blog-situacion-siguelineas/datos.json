@@ -1,0 +1,25 @@
+{
+  "plantilla": "blog",
+  "articulo": "https://codemaker.es/blog/situacion-aprendizaje-robotica-eso-robot-siguelineas/",
+  "titulo": "Situación de aprendizaje de robótica para ESO: el robot siguelíneas",
+  "portada": {
+    "imagen": "img/portada.jpg"
+  },
+  "desarrollo": {
+    "imagen": "img/desarrollo.jpg",
+    "parrafos": [
+      "El hospital del barrio quiere un robot que lleve las medicinas siguiendo una línea pintada en el suelo. Tu clase diseña el recorrido y lo programa.",
+      "Seis sesiones de 55 minutos para 2.º y 3.º de ESO: sensor, decisión, motor, depuración y ficha técnica. Con un robot simulado por pareja, sin comprar ni un kit."
+    ]
+  },
+  "cierre": {
+    "imagen": "img/cierre.png",
+    "texto": "Léela completa en **codemaker.es/blog**, lista para llevar al aula tal cual.",
+    "checks": [
+      "Sesión a sesión",
+      "Criterios y saberes del RD 217/2022",
+      "Atención a la diversidad (DUA)",
+      "Rúbrica de evaluación"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "plantilla": "blog",
+  "articulo": "https://codemaker.es/blog/alternativa-tinkercad-aula-modelado-3d/",
+  "titulo": "Alternativas made in Spain a Tinkercad para 3D en el aula",
+  "portada": {
+    "imagen": "img/portada.jpg"
+  },
+  "desarrollo": {
+    "imagen": "img/desarrollo.png",
+    "parrafos": [
+      "Tinkercad lleva más de diez años siendo la referencia del 3D en clase, y con razón. Pero se queda corto con los más pequeños, en el dibujo técnico y en lo creativo.",
+      "En el artículo, tres studios para tres momentos del aula: bloques para Primaria, planos en sistema europeo para la ESO y modelado orgánico para Plástica."
+    ]
+  },
+  "cierre": {
+    "imagen": "img/cierre.png",
+    "texto": "Lee el artículo completo en **codemaker.es/blog** y prueba los tres studios gratis.",
+    "checks": [
+      "VoxelStudio: 3D por bloques",
+      "ModelingStudio: planos acotados",
+      "FormStudio: modelado orgánico",
+      "Una sola plataforma para todo"
+    ]
+  }
+}
