@@ -32,8 +32,18 @@ va en `datos`, que devuelve `preparar`.
   pérgola (Modeling, duplicar y mover), el pulpo (Form, `moveFace`).
 - **Primero `--rapido`, y mirar los fotogramas.** Casi nunca sale a la primera.
   `TRAZA=1` saca por consola lo que la toma deje en `window.__traza`.
-- **En 4:5, los paneles de Robotic tapan el robot**: se esconde todo lo que no
-  sea el lienzo (`antes` de `robotic-laberinto.mjs`).
+- **En 4:5, los paneles tapan la escena** —en Robotic, el robot; en Form, el
+  panel de edición se come media imagen—: se esconde todo lo que no sea el
+  lienzo. En Voxel, Modeling y Form, con una hoja de estilo (`antes` de
+  `form-bodegon.mjs`), que esconde también los paneles que salen después,
+  como el de edición al entrar en una figura; en Robotic, elemento a elemento
+  (`robotic-laberinto.mjs`). En Code y en Game no: el código y los
+  bocadillos son parte de lo que se enseña.
+- **Lo que se quita en `preparar` se busca en la escena**, no se copia de la
+  receta: por nombre (`'Tirante'`, `'Fuste'`), por color y posición (la mancha
+  de Júpiter) o por forma (el cuerpo del pingüino es el negro con más vértices).
+  Las coordenadas de Voxel ya vienen desplazadas: el cubo más bajo queda en
+  y = 0,5.
 - **Game**: en tercera persona si no hay nada con lo que choque la cámara
   (`game-parkour`), en primera si hay casas o árboles (el valle del showreel).
   El jugador sigue una ruta de puntos: cada uno dice a qué distancia se salta y

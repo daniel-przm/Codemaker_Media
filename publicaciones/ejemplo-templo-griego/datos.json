@@ -1,0 +1,23 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "ModelingStudio"
+  },
+  "proyecto": "Templo griego",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Ciencias Sociales",
+    "Educación Plástica"
+  ],
+  "etapas": [
+    "ESO",
+    "Bachillerato"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "modeling-templo-griego"
+}

@@ -1,0 +1,24 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "GameStudio"
+  },
+  "proyecto": "Museo de la pintura española",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Educación Plástica",
+    "Ciencias Sociales",
+    "Programación"
+  ],
+  "etapas": [
+    "Primaria",
+    "ESO"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "game-museo"
+}

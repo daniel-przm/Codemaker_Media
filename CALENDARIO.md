@@ -4,9 +4,15 @@ Lo lee y lo actualiza `/publicar-semana` cada domingo: qué hay publicado, qué
 está programado y qué toca después. Se edita a mano cuando haga falta: el
 orden de la cola manda.
 
-**Ritmo:** un Reel de ejemplo cada dos días a las **19:30** (Europe/Madrid).
-Los días de en medio quedan para lo demás: carruseles del blog y de
-situaciones de aprendizaje, y fotos de clase.
+**Ritmo** (desde octubre de 2026), todo a las **19:30** (Europe/Madrid):
+
+| Día | Qué |
+|---|---|
+| Lunes | Carrusel del blog (artículos y situaciones de aprendizaje) |
+| Martes y jueves | Reel de un ejemplo de la Galería |
+| Viernes | Foto de un centro que usa la aplicación |
+
+Son 16–17 publicaciones al mes: el plan gratuito de Metricool programa 20.
 
 ## Publicado
 
@@ -21,35 +27,49 @@ situaciones de aprendizaje, y fotos de clase.
 | 24/09 | Notas de la clase · Code | https://www.instagram.com/reel/DdrBg30ETfP/ |
 | 24/09 | Blog: currículo español (carrusel) | https://www.instagram.com/p/DdrJ5Jaigjv/ |
 | 25/09 | El valle escondido · Game (vuelta 360°) | https://www.instagram.com/reel/DdtxujWCc-P/ |
+| 29/09 | Parkour sobre la lava · Game | https://www.instagram.com/reel/Dd4TUkDj-6R/ |
+| 01/10 | Laberinto · Robotic | https://www.instagram.com/reel/Dd9c1rYDj1d/ |
 
 ## Programado en Metricool
 
 | Fecha | Qué | Publicación |
 |---|---|---|
-| Mar 29/09 19:30 | Parkour sobre la lava · Game | `publicaciones/ejemplo-parkour` |
-| Jue 01/10 19:30 | Laberinto · Robotic | `publicaciones/ejemplo-laberinto` |
+| Lun 05/10 | Blog: situación de aprendizaje del siguelíneas (carrusel) | `publicaciones/blog-situacion-siguelineas` |
+| Mar 06/10 | Museo de la pintura española · Game | `publicaciones/ejemplo-museo` |
+| Jue 08/10 | Puente atirantado · Modeling | `publicaciones/ejemplo-puente-atirantado` |
+| Lun 12/10 | Blog: robótica sin kits (carrusel) | `publicaciones/blog-robotica-sin-kits` |
+| Mar 13/10 | Funciones y la pila: el factorial · Code | `publicaciones/ejemplo-factorial` |
+| Jue 15/10 | Pingüinos en el hielo · Form | `publicaciones/ejemplo-pinguinos` |
+| Lun 19/10 | Blog: alternativas a Tinkercad (carrusel) | `publicaciones/blog-alternativa-tinkercad` |
+| Mar 20/10 | El sistema solar · Voxel | `publicaciones/ejemplo-sistema-solar` |
+| Jue 22/10 | Templo griego · Modeling | `publicaciones/ejemplo-templo-griego` |
+| Lun 26/10 | Blog: alternativa a Blender (carrusel) | `publicaciones/blog-alternativa-blender` |
+| Mar 27/10 | Policubos · Voxel | `publicaciones/ejemplo-policubos` |
+| Jue 29/10 | Bodegón de frutas · Form | `publicaciones/ejemplo-bodegon` |
+
+Los viernes de octubre (2, 9, 16, 23 y 30), fotos de centros: sin programar
+todavía.
 
 ## Cola de Reels (en orden)
 
-Cada uno con la acción que se ve hacer, no solo una vuelta:
+Para noviembre, lo que queda de la Galería sin publicar:
 
-| Fecha prevista | Ejemplo (id del catálogo) | Qué se ve |
-|---|---|---|
-| Sáb 03/10 | Castillo medieval · `voxel-castillo-medieval` | El cursor pone las últimas almenas y la bandera; la cámara se abre al castillo |
-| Lun 05/10 | Museo de la pintura española · `game-museo` | Recorrido en primera persona; ante un Velázquez, la audioguía lo explica |
-| Mié 07/10 | Puente atirantado · `modeling-puente-atirantado` | Se duplican y colocan los últimos tirantes; la cámara recorre el puente |
-| Vie 09/10 | Funciones y la pila: el factorial · `code-factorial` | Dentro de la máquina, la pila crece con cada llamada y se deshace al volver |
-| Dom 11/10 | Pingüinos en el hielo · `form-pinguinos` | Se estira el pico o una aleta tirando de caras; la malla se suaviza |
-| Mar 13/10 | Templo griego · `modeling-templo-griego` | Se colocan las últimas columnas del pórtico |
+| Ejemplo (id del catálogo) | Qué se podría ver |
+|---|---|
+| Isla flotante · `voxel-isla-flotante` | El cursor pone la casa o la cascada; la cámara rodea la isla |
+| Célula robotizada · `modeling-celula-robotizada` | El brazo se ensambla pieza a pieza, o gira a coger la pieza de la cinta |
+| Parque de renovables · `modeling-parque-renovables` | Se duplican los últimos aerogeneradores o paneles |
 
-**Reserva**, cuando se acabe la cola: Sistema solar, Policubos, Isla flotante
-(Voxel); Parque de renovables, El faro, Mano robótica, Célula robotizada
-(Modeling); Bodegón (Form). Y los ejemplos nuevos que vayan entrando en el
-catálogo de la aplicación (`ejemplos/catalogo.mjs` en Codemaker_App).
+**Reserva**: Pulpo, Soporte en L y Clasificador salen en el anuncio del
+showreel; el Siguelíneas sencillo se parece al de la garra. Solo si se acaba
+lo demás. El Castillo medieval, El faro y Mano robótica no están en la Galería
+(`galeria: false`): no se pueden presentar como «ejemplo de la Galería». Y los
+ejemplos nuevos que vayan entrando en el catálogo de la aplicación
+(`ejemplos/catalogo.mjs` en Codemaker_App) tienen preferencia.
 
 ## Que no se repitan
 
-- **Ya publicados**: los de la tabla de arriba.
+- **Ya publicados o programados**: los de las tablas de arriba.
 - **Los usa el anuncio del showreel** (`showreel/planos/` en la aplicación):
   Pirámides (la esfinge), Pulpo, Valle, Casa con jardín (la pérgola), Soporte
   en L, Clasificador, Siguelíneas con garra, Notas de la clase.
@@ -57,8 +77,10 @@ catálogo de la aplicación (`ejemplos/catalogo.mjs` en Codemaker_App).
 
 ## Otras publicaciones pendientes
 
-- Carrusel del blog «Robótica sin kits» (`publicaciones/blog-robotica-sin-kits`,
-  maquetado; volver a renderizar, ya sale en oscuro).
+- Blog, para los lunes de noviembre: los «Qué es…» de VoxelStudio,
+  ModelingStudio, FormStudio, GameStudio y RoboticStudio. «Después de Scratch»
+  y «Programas de diseño 3D para el aula» siguen en borrador en la web: cuando
+  se publiquen, van delante.
 - Situaciones de aprendizaje: las publica otro agente en la web y las apunta en
   `docs/situaciones-publicadas.md` de Codemaker_NewWeb. Cada una nueva, un
   carrusel con la plantilla `blog`.

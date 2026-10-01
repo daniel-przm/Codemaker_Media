@@ -1,0 +1,13 @@
+Un puente atirantado sobre un río, hecho con figuras básicas en ModelingStudio 🌉
+
+El pilono en forma de A, el tablero con su calzada y los tirantes que lo sostienen, repartidos en abanico. Cada tirante es un cilindro: se duplica, se gira y se alarga hasta su anclaje.
+
+Es la unidad de estructuras hecha objeto: tracción en los tirantes, compresión en el pilono y triángulos por todas partes.
+
+¿Tus alumnos sabrían explicar por dónde baja la carga hasta el río?
+
+💡 Idea para clase: compararlo con un puente colgante y con uno de arco, y explicar en cada uno qué pieza trabaja a tracción y cuál a compresión.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #tecnologiaeso #estructuras #diseño3D #ingenieria

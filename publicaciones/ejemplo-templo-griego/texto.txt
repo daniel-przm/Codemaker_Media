@@ -1,0 +1,13 @@
+Un templo griego de orden dórico, levantado con figuras básicas en ModelingStudio 🏛️
+
+Crepidoma, columnas con su capitel, arquitrabe, friso con triglifos y metopas, y frontón. Cada columna son cuatro piezas —fuste, collarino, equino y ábaco— que se duplican y se colocan en el pórtico.
+
+Cada parte es una figura, así que se nombran construyéndolas.
+
+¿Tus alumnos sabrían distinguir un templo dórico de uno jónico?
+
+💡 Idea para clase: cambiar el orden a jónico o corintio y ver qué piezas cambian.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #historiadelarte #antiguagrecia #geografiaehistoria #diseño3D

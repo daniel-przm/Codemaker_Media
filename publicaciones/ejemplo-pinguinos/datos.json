@@ -1,0 +1,23 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "FormStudio"
+  },
+  "proyecto": "Pingüinos en el hielo",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Ciencias Naturales",
+    "Educación Plástica"
+  ],
+  "etapas": [
+    "Primaria",
+    "ESO"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "form-pinguinos"
+}

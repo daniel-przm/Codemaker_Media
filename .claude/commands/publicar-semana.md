@@ -1,7 +1,8 @@
 # Preparar y programar las publicaciones de la semana
 
-Cada domingo: grabar los Reels de ejemplo de la semana que viene y dejarlos
-programados en Metricool. Lo que toca, en `CALENDARIO.md`; cómo se hace una
+Cada domingo (o de una vez para todo un mes): grabar los Reels de ejemplo y
+preparar los carruseles del blog de lo que viene, y dejarlos programados en
+Metricool. Lo que toca, en `CALENDARIO.md`; cómo se hace una
 publicación, en `README.md`; cómo se escribe una toma, en `tomas/LEEME.md`.
 
 Se trabaja **sobre `main`, con commits, sin ramas ni PR, y sin CI** (`CLAUDE.md`).
@@ -12,17 +13,30 @@ necesita algo que la aplicación no tiene, se le cuenta a Daniel.
 
 - Codemaker_App al lado de este repositorio (o `CODEMAKER_APP=<ruta>`), en su
   `main` actualizado, con `npm ci` hecho. Y `npm install` aquí.
+  ⚠️ A 01/10/2026 el motor de planos (`showreel/`) **aún no está en `main`**
+  de la aplicación: vive en sus ramas `claude/…` (la última,
+  `claude/candado-multicolor-recuadro`). Mientras no se fusione, una copia de
+  esa rama aparte (`git worktree add`, `npm ci` dentro) y `CODEMAKER_APP` apuntando a ella.
 - `CHROMIUM=/opt/pw-browsers/chromium-1194/chrome-linux/chrome` si la sesión no
   encuentra el Chromium de Playwright. Los emuladores necesitan Java 21+.
 - Si toca un Game con modelos del catálogo: el inventario (`tomas/LEEME.md`).
 
 ## 1 · Qué toca
 
-Leer `CALENDARIO.md`. Toca un Reel cada dos días a las 19:30, desde el día
-siguiente al último programado, hasta cubrir la semana que viene (3 o 4).
+Leer `CALENDARIO.md`, que tiene el ritmo: lunes, carrusel del blog; martes y
+jueves, Reel de un ejemplo; viernes, foto de un centro; todo a las 19:30.
+Desde el día siguiente al último programado, hasta cubrir lo que se vaya a
+programar.
 Coger los primeros de la cola. Si la cola se acaba, de la reserva, sin repetir
 nada de «Que no se repitan». Mirar en el catálogo de la aplicación
-(`ejemplos/catalogo.mjs`) si hay ejemplos nuevos: tienen preferencia.
+(`ejemplos/catalogo.mjs`) si hay ejemplos nuevos: tienen preferencia. Solo
+ejemplos de la Galería: uno con `galeria: false` no puede llevar «Este ejemplo
+está en la Galería».
+
+Para el blog: los artículos de `src/content/blog/` de Codemaker_NewWeb con
+`draft: false` que no estén en `CALENDARIO.md`, comprobando que su página
+responde en codemaker.es. Las situaciones de aprendizaje nuevas
+(`docs/situaciones-publicadas.md` de la web) van primero.
 
 ## 2 · Por cada Reel
 
@@ -63,8 +77,15 @@ nada de «Que no se repitan». Mirar en el catálogo de la aplicación
    `reel.mp4`, `videoThumbnailUrl` = la `portada.png`, `text` = `texto.txt`.
    **Solo el Reel**: la Story la comparte Daniel desde el Reel.
 
-   **Mientras Daniel no diga otra cosa, con `draft: true`**: queda en
-   borrador con su fecha, y él lo revisa y lo programa desde Metricool.
+   Programado de verdad (`draft: false`): así lo decidió Daniel el
+   01/10/2026. Si alguna vez quiere revisarlo antes, `draft: true` lo deja en
+   borrador con su fecha.
+4. **Los carruseles del blog**: con la plantilla `blog` (copiar
+   `publicaciones/blog-alternativa-tinkercad`); imágenes de la propia web
+   (`public/images/`) o capturas de la galería (`ejemplos/capturas/` de la
+   aplicación), **nunca fotos con caras de alumnos**. Texto como el de
+   `blog-curriculo-espanol`. En Metricool, `type: "POST"` con las tres láminas.
+   Ojo con el cambio de hora: a partir del último domingo de octubre, `+01:00`.
 
 ## 4 · Cerrar
 

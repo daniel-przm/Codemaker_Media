@@ -1,0 +1,13 @@
+Una función que se llama a sí misma… vista desde dentro del ordenador 💻
+
+El programa calcula el factorial de los números del 1 al 6 en Java. Y en la máquina 3D de CodeStudio se ve lo que la recursión no cuenta: cada llamada a factorial apila un marco nuevo en la pila, con su propia n. La pila crece como una torre y, al volver, se deshace de arriba abajo.
+
+Es el ámbito de una variable sin una palabra: hay varias n a la vez, cada una en su marco.
+
+¿Tus alumnos sabrían decir cuántas n hay en la pila al calcular 6!?
+
+💡 Idea para clase: llevar el bucle hasta 13 y descubrir por qué el resultado sale mal: el int se desborda.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #programacion #java #recursividad #tecnologiaeso #bachillerato

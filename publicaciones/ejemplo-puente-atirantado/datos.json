@@ -1,0 +1,23 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "ModelingStudio"
+  },
+  "proyecto": "Puente atirantado",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Tecnología",
+    "Matemáticas"
+  ],
+  "etapas": [
+    "ESO",
+    "Bachillerato"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "modeling-puente-atirantado"
+}

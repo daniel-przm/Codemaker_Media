@@ -1,0 +1,13 @@
+El sistema solar, cubo a cubo, en VoxelStudio 🪐
+
+El Sol y los ocho planetas en fila, por orden: los anillos de Saturno, la Tierra con su Luna y Júpiter con su Gran Mancha Roja, que se coloca cubo a cubo.
+
+Los tamaños no están a escala… y esa es justo la conversación que abre en clase.
+
+¿Tus alumnos sabrían ordenar los planetas de memoria?
+
+💡 Idea para clase: que cada alumno investigue un planeta y lo construya con los colores que tiene de verdad.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #sistemasolar #cienciasnaturales #educacionprimaria #diseño3D

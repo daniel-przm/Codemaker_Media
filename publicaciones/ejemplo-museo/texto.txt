@@ -1,0 +1,13 @@
+Un museo de pintura española que se recorre en primera persona 🖼️
+
+Tres salas —el Siglo de Oro, Goya y Sorolla— con once cuadros de Velázquez, El Greco, Murillo, Zurbarán, Goya y Sorolla. Al acercarte a un cuadro, la audioguía te lo explica; y cada marca verde del suelo sella tu pasaporte del museo. Con las once, has ganado.
+
+Está hecho en GameStudio: las salas, con figuras; los cuadros, del catálogo de imágenes; y la audioguía y el pasaporte, con reglas de bloques: cuando el visitante se acerca a un cuadro, el cuadro habla.
+
+¿Tus alumnos serían capaces de montar su propia sala?
+
+💡 Idea para clase: añadir una sala nueva con otro pintor y escribir su audioguía. Arte, historia y programación en el mismo proyecto.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #historiadelarte #velazquez #educacionplastica #videojuegoseducativos #programacion

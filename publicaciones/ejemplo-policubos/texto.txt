@@ -1,0 +1,13 @@
+Policubos: simetría y volumen, cubo a cubo en VoxelStudio 🟥
+
+Una figura a un lado del espejo y su imagen al otro: cada cubo, a la misma distancia del eje que su pareja. Al lado, las ocho piezas que se pueden hacer con cuatro cubos, y los cubos de lado 1, 2 y 3 con los cubos que tiene cada uno.
+
+Es el material que el currículo de Matemáticas de Primaria llama «policubos», en digital.
+
+¿Tus alumnos sabrían cuántos cubos tiene el cubo de lado 4 sin construirlo?
+
+💡 Idea para clase: construir al otro lado del espejo la imagen de una figura nueva, y predecir el cubo de lado 4 antes de hacerlo.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #matematicas #educacionprimaria #simetria #geometria

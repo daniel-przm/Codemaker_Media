@@ -1,0 +1,13 @@
+Una familia de pingüinos emperador sobre el hielo, modelada en FormStudio 🐧
+
+Cada pingüino parte de una esfera: se estira, se deforma y las aletas salen tirando de una cara. Con la simetría activada, la otra aleta sale sola. Como plastilina digital.
+
+Y a su lado, el polluelo y un pez para la cena 🐟
+
+¿Tus alumnos sabrían explicar cómo está adaptado un pingüino al frío?
+
+💡 Idea para clase: modelar otro animal del mismo ecosistema y completar la escena. Ciencias naturales y volumen en el mismo proyecto.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #cienciasnaturales #educacionprimaria #diseño3D #animales

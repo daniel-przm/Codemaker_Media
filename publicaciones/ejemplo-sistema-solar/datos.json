@@ -1,0 +1,21 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "VoxelStudio"
+  },
+  "proyecto": "El sistema solar",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Ciencias Naturales"
+  ],
+  "etapas": [
+    "Primaria"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "voxel-sistema-solar"
+}

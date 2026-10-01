@@ -1,0 +1,13 @@
+Un bodegón de frutas a la manera de Cézanne, modelado en FormStudio 🍐
+
+El frutero, las manzanas, la pera, las uvas, media naranja, un jarrón de barro y una botella. Todo sale de formas suaves: la pera es una esfera de la que se tira hacia arriba hasta que se estrecha.
+
+El género clásico de la pintura, llevado al modelado en 3D.
+
+¿Tus alumnos serían capaces de componer su propio bodegón?
+
+💡 Idea para clase: que cada alumno componga su bodegón y compare la luz con la de un cuadro.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #educacionplastica #bodegon #modelado3D #diseño3D

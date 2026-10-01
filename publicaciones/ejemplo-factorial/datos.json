@@ -1,0 +1,23 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "CodeStudio"
+  },
+  "proyecto": "Funciones y la pila: el factorial",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Programación",
+    "Matemáticas"
+  ],
+  "etapas": [
+    "ESO",
+    "Bachillerato"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "code-factorial"
+}
