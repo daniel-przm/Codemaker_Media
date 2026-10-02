@@ -39,6 +39,10 @@ va en `datos`, que devuelve `preparar`.
   como el de edición al entrar en una figura; en Robotic, elemento a elemento
   (`robotic-laberinto.mjs`). En Code y en Game no: el código y los
   bocadillos son parte de lo que se enseña.
+- **Code, con `ESCALA=1`** (`ESCALA=1 npm run grabar -- …`): a la escala de
+  siempre (1,5) el primer fotograma de la máquina tarda más de los 30 s que
+  espera la captura y la grabación se para. Es casi todo texto de interfaz: a
+  escala 1 sale nítido igual.
 - **Lo que se quita en `preparar` se busca en la escena**, no se copia de la
   receta: por nombre (`'Tirante'`, `'Fuste'`), por color y posición (la mancha
   de Júpiter) o por forma (el cuerpo del pingüino es el negro con más vértices).
