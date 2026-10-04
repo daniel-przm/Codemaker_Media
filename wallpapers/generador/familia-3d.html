@@ -1,0 +1,239 @@
+<!doctype html><meta charset="utf-8">
+<!-- El wallpaper «Familia 3D». Lo sirve y lo fotografía render.mjs: /marca.js y
+     /fuentes.css salen de la aplicación, y /nm/ es su node_modules. -->
+<link rel="stylesheet" href="/fuentes.css">
+<style>html,body{margin:0;background:#000;overflow:hidden}#capa{position:fixed;inset:0;pointer-events:none}</style>
+<script type="importmap">{"imports":{
+ "three":"/nm/three/build/three.module.js",
+ "three/addons/":"/nm/three/examples/jsm/",
+ "three-mesh-bvh":"/nm/three-mesh-bvh/build/index.module.js",
+ "three-bvh-csg":"/nm/three-bvh-csg/build/index.module.js"}}</script>
+<script src="/marca.js"></script>
+<body>
+<script type="module">
+import { crear, listo } from '/escena3d.js';
+import { mascota } from '/mascota3d.js';
+
+/** El logotipo de la app, en blanco para fondo oscuro (viewBox 357×108). */
+const logo = (x, y, alto) => `<g transform="translate(${x} ${y}) scale(${alto / 108})">${M.logoBlanco}</g>`;
+const ANCHO_LOGO = (alto) => (357 / 108) * alto;
+
+// El ambiente: fondo, rejilla e iluminación. Se probaron otros (azul marca,
+// atardecer, claro, terminal, aurora) y se quedó la noche.
+const T = { fondo: ['#13264a', '#070b16', '#020308'], rejilla: '#5f8fff', monte: '#c084fc', linea: '#f1f5f9', lema: '#9cb8e6',
+  sol: '#ffffff', solI: 1.7, cielo: '#cfe0ff', suelo: '#0b1630', exposicion: 0.9, bloom: [0.28, 0.5, 0.9], sombra: 0.5, alfa: 1 };
+const { THREE, escena, cam, sol, render } = crear({ fondo: T.fondo, exposicion: T.exposicion, bloom: T.bloom, alto: 17, centro: [1060, 540] });
+
+sol.color.set(T.sol); sol.intensity = T.solI;
+escena.traverse((o) => { if (o.isHemisphereLight) { o.color.set(T.cielo); o.groundColor.set(T.suelo); } });
+
+// ── La cuadrícula: celda de 0,6 y líneas en 0,3 + 0,6·k ──
+// La grande ocupa 3×3 casillas (centro en el centro de una casilla, el origen);
+// las de los studios 2×2 (centro en un cruce de líneas); los vóxeles 1×1.
+const CELDA = 0.6, GRANDE = 3 * CELDA, PEQ = 2 * CELDA;
+const cruce = (i, j) => [0.3 + i * CELDA, 0.3 + j * CELDA];
+const casilla = (i, j) => [i * CELDA, j * CELDA];
+const SITIO = {
+  voxel:    cruce(-16, 3),
+  modeling: cruce(-4, 15),
+  form:     cruce(-12, -6),
+  code:     cruce(6, -16),
+  game:     cruce(15, -4),
+  robotics: cruce(9, 9),
+};
+// Hacia dónde mira cada una: 'der' (cara +X) o 'izq' (cara +Z).
+const MIRA = { marca: 'der', voxel: 'izq', modeling: 'izq', form: 'izq', code: 'izq', game: 'der', robotics: 'der' };
+
+// El terreno: plano salvo la montaña esculpida de Game, con la cima plana.
+const [GX, GZ] = SITIO.game;
+const altura = (x, z) => {
+  const d = Math.max(0, Math.hypot(x - GX, z - GZ) - 0.95);
+  const d3 = (x - GX - 1.5) ** 2 + (z - GZ + 2.1) ** 2;
+  return Math.max(1.5 * Math.exp(-(d * d) / 1.6), 0.6 * Math.exp(-d3 / 1.1));
+};
+
+// Rejilla de líneas que sigue el terreno y se desvanece lejos del centro.
+{
+  const L = 22, paso = CELDA / 4, pos = [], col = [];
+  const c = new THREE.Color(T.rejilla), cMonte = new THREE.Color(T.monte);
+  const punto = (x, z) => {
+    const y = altura(x, z);
+    pos.push(x, y + 0.003, z);
+    const a = Math.max(0, 1 - Math.hypot(x * 0.85, z) / 19) ** 1.3 * 0.55 + Math.min(1, y * 1.2) * 0.4;
+    const aT = a * T.alfa;
+    const k = Math.min(1, y * 1.6);
+    col.push(c.r + (cMonte.r - c.r) * k, c.g + (cMonte.g - c.g) * k, c.b + (cMonte.b - c.b) * k, aT);
+  };
+  for (let i = -Math.round(L / CELDA); i <= Math.round(L / CELDA); i++) {
+    const f = 0.3 + i * CELDA;
+    for (let t = -L; t < L; t += paso) { punto(f, t); punto(f, t + paso); punto(t, f); punto(t + paso, f); }
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 4));
+  escena.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, depthWrite: false })));
+  const s = new THREE.PlaneGeometry(2 * L, 2 * L, 240, 240);
+  s.rotateX(-Math.PI / 2);
+  const p = s.attributes.position;
+  for (let i = 0; i < p.count; i++) p.setY(i, altura(p.getX(i), p.getZ(i)));
+  s.computeVertexNormals();
+  const sombra = new THREE.Mesh(s, new THREE.ShadowMaterial({ opacity: T.sombra, color: '#000814' }));
+  sombra.receiveShadow = true; escena.add(sombra);
+}
+
+/** Coloca una mascota apoyada en el suelo (o en y0), mirando a donde diga MIRA. */
+const poner = (id, lado, { y0 = 0, x, z } = {}) => {
+  const m = mascota(id, lado);
+  const [px, pz] = x !== undefined ? [x, z] : id === 'marca' ? [0, 0] : SITIO[id];
+  m.position.set(px, y0 + lado / 2, pz);
+  // Mirar a la izquierda = la cara de los ojos pasa de +X a +Z, con el mismo
+  // borde delantero: un espejo en x = z (giro de −90° y z invertida).
+  if (MIRA[id] === 'izq') { m.rotation.y = -Math.PI / 2; m.scale.z = -1; }
+  escena.add(m);
+  return m;
+};
+poner('marca', GRANDE);
+
+// ── Voxel: un árbol de vóxeles de 1×1, con la última pieza colocándose ──
+poner('voxel', PEQ);
+{
+  const V = CELDA / 2; // vóxel de media casilla
+  const geo = new THREE.BoxGeometry(V * 0.95, V * 0.95, V * 0.95);
+  const mats = {};
+  const mat = (c) => (mats[c] ??= new THREE.MeshStandardMaterial({ color: c, roughness: 0.6 }));
+  const vox = (i, y, j, c) => {
+    const m = new THREE.Mesh(geo, mat(c));
+    m.position.set(V / 2 + i * V, V / 2 + y * V, V / 2 + j * V);
+    m.castShadow = m.receiveShadow = true; escena.add(m);
+    return m;
+  };
+  // tronco en la media casilla (TI, TJ): detrás de la mascota, con aire alrededor
+  const TI = -37, TJ = 12;
+  vox(TI, 0, TJ, '#8b5a2b'); vox(TI, 1, TJ, '#8b5a2b');
+  for (let a = -1; a <= 1; a++) for (let b = -1; b <= 1; b++) vox(TI + a, 2, TJ + b, (a + b) % 2 ? '#16a34a' : '#22C55E');
+  for (const [a, b] of [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1]]) vox(TI + a, 3, TJ + b, a === 0 && b === 0 ? '#22C55E' : '#16a34a');
+  // la última, bajando a su sitio en la copa
+  vox(TI, 6, TJ, '#4ade80');
+  const fant = new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: '#86efac' }));
+  fant.position.set(V / 2 + TI * V, V / 2 + 4 * V, V / 2 + TJ * V); escena.add(fant);
+  const velo = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: '#4ade80', transparent: true, opacity: 0.18, depthWrite: false }));
+  velo.position.copy(fant.position); escena.add(velo);
+}
+
+// ── Modeling: el cilindro restado flota sobre el agujero, con los ejes en su centro ──
+poner('modeling', PEQ);
+{
+  const [mx, mz] = SITIO.modeling, h = PEQ / 2;
+  const cil = new THREE.CylinderGeometry(h * 0.5, h * 0.5, h * 0.9, 48);
+  const c = new THREE.Vector3(mx, PEQ + h * 1.25, mz);
+  const fant = new THREE.Mesh(cil, new THREE.MeshPhysicalMaterial({ color: '#93c5fd', transparent: true, opacity: 0.25, roughness: 0.2, depthWrite: false }));
+  fant.position.copy(c); escena.add(fant);
+  const bordes = new THREE.LineSegments(new THREE.EdgesGeometry(cil, 30), new THREE.LineBasicMaterial({ color: '#bfdbfe' }));
+  bordes.position.copy(c); escena.add(bordes);
+  const pts = [new THREE.Vector3(mx, c.y - h * 0.5, mz), new THREE.Vector3(mx, PEQ + 0.02, mz)];
+  const raya = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineDashedMaterial({ color: '#bfdbfe', dashSize: 0.05, gapSize: 0.04 }));
+  raya.computeLineDistances(); escena.add(raya);
+  const eje = (dir, color) => {
+    const g = new THREE.Group();
+    const m = new THREE.MeshBasicMaterial({ color, depthTest: false });
+    const t = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.75, 10), m); t.position.y = 0.375; g.add(t);
+    const p = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.18, 16), m); p.position.y = 0.84; g.add(p);
+    g.traverse((o) => (o.renderOrder = 10));
+    g.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+    g.position.copy(c); escena.add(g);
+  };
+  eje(new THREE.Vector3(1, 0, 0), '#ef4444'); eje(new THREE.Vector3(0, 1, 0), '#22c55e'); eje(new THREE.Vector3(0, 0, 1), '#3b82f6');
+  const nudo = new THREE.Mesh(new THREE.SphereGeometry(0.045, 16, 10), new THREE.MeshBasicMaterial({ color: '#ffffff', depthTest: false }));
+  nudo.renderOrder = 11; nudo.position.copy(c); escena.add(nudo);
+}
+
+// ── Form: la jaula de control, redondeada como en una subdivisión Catmull-Clark ──
+poner('form', PEQ);
+{
+  const [fx, fz] = SITIO.form, N = 3, R = PEQ * 0.62, MUESTRAS = 16;
+  // del cubo [-1,1]³ a la esfera, y de ahí un punto intermedio: un cubo redondeado
+  const redondo = (x, y, z) => {
+    const sx = x * Math.sqrt(1 - y * y / 2 - z * z / 2 + y * y * z * z / 3);
+    const sy = y * Math.sqrt(1 - z * z / 2 - x * x / 2 + z * z * x * x / 3);
+    const sz = z * Math.sqrt(1 - x * x / 2 - y * y / 2 + x * x * y * y / 3);
+    const t = 0.55;
+    return new THREE.Vector3(x + (sx - x) * t, y + (sy - y) * t, z + (sz - z) * t).multiplyScalar(R);
+  };
+  const segs = [], nodos = new Map();
+  const ejes = [[0, 1, 2], [1, 2, 0], [2, 0, 1]];
+  for (const [a, b, c] of ejes) for (const lado of [-1, 1]) {
+    for (let i = 0; i <= N; i++) {
+      const u = -1 + (2 * i) / N;
+      for (const dirB of [true, false]) {
+        let prev = null;
+        for (let k = 0; k <= MUESTRAS; k++) {
+          const v = -1 + (2 * k) / MUESTRAS;
+          const p = [0, 0, 0]; p[a] = lado; p[b] = dirB ? u : v; p[c] = dirB ? v : u;
+          const q = redondo(...p);
+          if (prev) segs.push(prev.x, prev.y, prev.z, q.x, q.y, q.z);
+          prev = q;
+        }
+      }
+      for (let j = 0; j <= N; j++) {
+        const p = [0, 0, 0]; p[a] = lado; p[b] = u; p[c] = -1 + (2 * j) / N;
+        const q = redondo(...p); nodos.set(q.toArray().map((n) => n.toFixed(3)).join(), q);
+      }
+    }
+  }
+  const gj = new THREE.BufferGeometry(); gj.setAttribute('position', new THREE.Float32BufferAttribute(segs, 3));
+  const jaula = new THREE.LineSegments(gj, new THREE.LineBasicMaterial({ color: '#fdba74', transparent: true, opacity: 0.6 }));
+  jaula.position.set(fx, PEQ / 2, fz); escena.add(jaula);
+  const dot = new THREE.SphereGeometry(0.03, 12, 8), md = new THREE.MeshBasicMaterial({ color: '#fff7ed' });
+  for (const q of nodos.values()) { const d = new THREE.Mesh(dot, md); d.position.set(fx + q.x, PEQ / 2 + q.y, fz + q.z); escena.add(d); }
+}
+
+// ── Game: en la cima plana de la montaña esculpida ──
+poner('game', PEQ, { y0: altura(GX, GZ) - 0.01 });
+
+// ── Robotic: sobre una línea blanca pintada directamente en la rejilla ──
+{
+  const [rx, rz] = SITIO.robotics;
+  const x0 = rx - CELDA * 3, x1 = rx + CELDA * 4, z0 = rz, z1 = rz + CELDA * 4, r = (z1 - z0) / 2, a = 0.045;
+  const estadio = (rr) => {
+    const s = new THREE.Shape();
+    s.moveTo(x0 + r, z0 - (rr - r)); s.lineTo(x1 - r, z0 - (rr - r));
+    s.absarc(x1 - r, (z0 + z1) / 2, rr, -Math.PI / 2, Math.PI / 2, false);
+    s.lineTo(x0 + r, z1 + (rr - r));
+    s.absarc(x0 + r, (z0 + z1) / 2, rr, Math.PI / 2, Math.PI * 1.5, false);
+    return s;
+  };
+  const anillo = estadio(r + a); anillo.holes.push(estadio(r - a));
+  const lg = new THREE.ShapeGeometry(anillo, 64); lg.rotateX(Math.PI / 2);
+  const linea = new THREE.Mesh(lg, new THREE.MeshBasicMaterial({ color: T.linea, side: THREE.DoubleSide }));
+  linea.position.y = 0.01; escena.add(linea);
+  const m = mascota('robotics', PEQ);
+  m.position.set(rx, (PEQ / 2) * 1.17, rz);
+  escena.add(m);
+}
+
+// ── Code: con su bocadillo de Java, y mirándolo ──
+poner('code', PEQ);
+
+cam.updateMatrixWorld(); cam.updateProjectionMatrix();
+const aPantalla = (v) => { const p = v.clone().project(cam); return [(p.x + 1) / 2 * 1920, (1 - p.y) / 2 * 1080]; };
+const [bx, by] = aPantalla(new THREE.Vector3(SITIO.code[0], PEQ * 1.05, SITIO.code[1]));
+const C = { fondo: '#1E1E2E', borde: '#45475A', texto: '#CDD6F4', clave: '#CBA6F7', tipo: '#F9E2AF', cadena: '#A6E3A1', fun: '#89B4FA' };
+const lineas = [
+  [['tipo', 'String'], ['texto', ' idea = '], ['cadena', '"¿qué creamos hoy?"'], ['texto', ';']],
+  [['tipo', 'System'], ['texto', '.out.'], ['fun', 'println'], ['texto', '(idea);']],
+];
+const BW = 450, BH = 100, BX = bx - BW + 10, BY = by - 70 - BH;
+const texto = lineas.map((l, i) => `<text x="${BX + 22}" y="${BY + 41 + i * 33}" font-family="IBM Plex Mono" font-size="18">${l.map(([k, t]) => `<tspan fill="${C[k]}">${t.replace(/ /g, ' ')}</tspan>`).join('')}</text>`).join('');
+
+document.body.insertAdjacentHTML('beforeend', `<svg id="capa" viewBox="0 0 1920 1080">
+  <defs><filter id="sb" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity=".5"/></filter></defs>
+  <g filter="url(#sb)">
+    <path d="M${BX + 14} ${BY}H${BX + BW - 14}Q${BX + BW} ${BY} ${BX + BW} ${BY + 14}V${BY + BH - 14}Q${BX + BW} ${BY + BH} ${BX + BW - 14} ${BY + BH}H${BX + BW - 40}L${bx + 4} ${by - 26}L${BX + BW - 84} ${BY + BH}H${BX + 14}Q${BX} ${BY + BH} ${BX} ${BY + BH - 14}V${BY + 14}Q${BX} ${BY} ${BX + 14} ${BY}Z" fill="${C.fondo}" stroke="${C.borde}" stroke-width="2"/>
+  </g>
+  ${texto}
+  ${logo(1920 - 110 - ANCHO_LOGO(54), 1080 - 150, 54)}
+  <text x="${1920 - 110}" y="${1080 - 70}" text-anchor="end" font-family="IBM Plex Mono" font-size="18" fill="${T.lema}" letter-spacing=".5">Diseño 3D, Programación y Robótica</text>
+</svg>`);
+await document.fonts.load('400 18px "IBM Plex Mono"');
+listo(render);
+</script>

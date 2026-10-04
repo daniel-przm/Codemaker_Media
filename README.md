@@ -45,6 +45,11 @@ herramienta, sin tocarla: tiene que estar clonada al lado, con `npm ci` hecho
 El procedimiento de cada semana, de la cola del calendario a Metricool:
 `.claude/commands/publicar-semana.md`. Lo que toca: `CALENDARIO.md`.
 
+## Wallpapers
+
+Fondos de pantalla para los PC del aula, en `wallpapers/`. Se rehacen con
+`npm run wallpaper`; cómo están hechos, en `wallpapers/README.md`.
+
 ## Normas de contenido
 
 - **Ni planes, ni precios, ni licencias.** No se dice qué studio es BASIC o

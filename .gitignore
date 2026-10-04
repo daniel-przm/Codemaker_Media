@@ -3,3 +3,6 @@ node_modules/
 publicaciones/*/fotogramas/
 # Las tomas grabadas: se regeneran con npm run grabar
 grabaciones/
+
+# La marca y las fuentes que el generador de wallpapers trae de la aplicación
+wallpapers/generador/.cache/
