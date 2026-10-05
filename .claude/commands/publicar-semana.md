@@ -13,10 +13,10 @@ necesita algo que la aplicación no tiene, se le cuenta a Daniel.
 
 - Codemaker_App al lado de este repositorio (o `CODEMAKER_APP=<ruta>`), en su
   `main` actualizado, con `npm ci` hecho. Y `npm install` aquí.
-  ⚠️ A 01/10/2026 el motor de planos (`showreel/`) **aún no está en `main`**
-  de la aplicación: vive en sus ramas `claude/…` (la última,
-  `claude/candado-multicolor-recuadro`). Mientras no se fusione, una copia de
-  esa rama aparte (`git worktree add`, `npm ci` dentro) y `CODEMAKER_APP` apuntando a ella.
+  El motor de planos (`showreel/`) ya está en `main` de la aplicación.
+  ⚠️ Para las tomas de Game con cuadros (el museo) necesita subir las láminas
+  a los emuladores (`prepararLaminas` en `showreel/planos/grabar.mjs`): si
+  falla con «Faltan por publicar las láminas», es que aún no está.
 - `CHROMIUM=/opt/pw-browsers/chromium-1194/chrome-linux/chrome` si la sesión no
   encuentra el Chromium de Playwright. Los emuladores necesitan Java 21+.
 - Si toca un Game con modelos del catálogo: el inventario (`tomas/LEEME.md`).
