@@ -1,0 +1,13 @@
+Un perro con nueve cubos: así se empieza en VoxelStudio 🐶
+
+Las patas, el cuerpo, la cola, la cabeza y la oreja negra. En la pradera hay nueve animales —la vaca, la oveja, el cerdo, el pollito, el conejo, la rana, el perro y, en el estanque, el pato y el pez— y ninguno pasa de dos cubos de ancho.
+
+Por eso se copian mirándolos de lado, capa a capa: es el primer proyecto para los que empiezan, y se cuenta cubo a cubo.
+
+¿Tus alumnos sabrían cuántos cubos tiene la vaca sin contarlos uno a uno?
+
+💡 Idea para clase: elegir un animal, contar sus cubos y construirlo al lado; después, inventar uno que no esté y que los compañeros adivinen cuál es.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #educacionprimaria #animales #educacionplastica #diseño3D

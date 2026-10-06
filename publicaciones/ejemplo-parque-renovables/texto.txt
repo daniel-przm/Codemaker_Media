@@ -1,0 +1,13 @@
+Un parque de renovables, hecho con figuras básicas en ModelingStudio ☀️🌬️
+
+Los aerogeneradores en las colinas, el huerto solar, la subestación, las torres de alta tensión que se llevan la energía y un coche eléctrico cargando. Cada fila de placas, con sus soportes, se duplica y se coloca en su sitio.
+
+Dos fuentes renovables en una sola escena, y el camino que hace la energía hasta que se usa.
+
+¿Tus alumnos sabrían defender una fuente de energía frente a la otra?
+
+💡 Idea para clase: que cada grupo defienda una fuente con sus ventajas e inconvenientes.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #tecnologiaeso #energiasrenovables #sostenibilidad #diseño3D

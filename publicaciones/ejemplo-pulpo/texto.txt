@@ -1,0 +1,13 @@
+Un pulpo hecho con una sola esfera, en FormStudio 🐙
+
+Ni una pieza añadida: el manto es la parte de arriba de la esfera, estirada y abombada; los ocho brazos, ocho caras estiradas tramo a tramo, cada tramo más fino y un poco más girado. Los ojos y las ventosas son caras de la misma malla, pintadas.
+
+Y con la simetría activada, lo que haces en un brazo lo hace también el del otro lado.
+
+¿Tus alumnos serían capaces de sacar otro animal de una sola esfera?
+
+💡 Idea para clase: partir de una esfera y conseguir otro animal sin usar ninguna figura más.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #educacionplastica #modelado3D #diseño3D #animales

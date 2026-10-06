@@ -1,0 +1,23 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "RoboticStudio"
+  },
+  "proyecto": "Clasificador de totems",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Programación",
+    "Tecnología"
+  ],
+  "etapas": [
+    "Primaria",
+    "ESO"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "robotic-clasificador-completo"
+}

@@ -1,0 +1,22 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "ModelingStudio"
+  },
+  "proyecto": "Parque de renovables",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Tecnología",
+    "Ciencias Naturales"
+  ],
+  "etapas": [
+    "ESO"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "modeling-parque-renovables"
+}

@@ -1,0 +1,13 @@
+Un brazo robótico industrial, montado pieza a pieza en ModelingStudio 🦾
+
+La base, el hombro, el brazo, el codo, el antebrazo, la muñeca y la pinza, que coge una pieza de la cinta transportadora. Alrededor, la célula: las franjas y los postes de seguridad y el armario de control con su seta de emergencia.
+
+Todo con figuras básicas. Así se ve cómo se ensambla un mecanismo: articulaciones, eslabones y un efector al final.
+
+¿Tus alumnos sabrían decir cuántos grados de libertad tiene el brazo?
+
+💡 Idea para clase: identificar los grados de libertad del brazo y proponer otra tarea para la célula.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #tecnologiaeso #robotica #industria40 #diseño3D

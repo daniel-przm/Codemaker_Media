@@ -1,0 +1,13 @@
+Un castillo medieval hecho solo con cajas, en VoxelStudio 🏰
+
+La muralla con sus almenas, cuatro torres con tejado y bandera, el foso con el puente levadizo y, en el patio, la torre del homenaje, el pozo, la cuadra con su caballo, un puesto del mercado y la fragua.
+
+Sin curvas ni círculos: está pensado para construirlo entero en clase. Y cada pieza es una palabra de la Edad Media.
+
+¿Tus alumnos sabrían explicar para qué servía cada parte?
+
+💡 Idea para clase: repartir los elementos por grupos, que cada uno construya el suyo y explique para qué servía; después, añadir lo que falte: la capilla, el huerto, las caballerizas.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #recursoseducativos #edadmedia #cienciassociales #educacionprimaria #diseño3D

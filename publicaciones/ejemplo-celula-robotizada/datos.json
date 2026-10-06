@@ -1,0 +1,22 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "ModelingStudio"
+  },
+  "proyecto": "Célula robotizada",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Tecnología"
+  ],
+  "etapas": [
+    "ESO",
+    "Bachillerato"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "modeling-celula-robotizada"
+}

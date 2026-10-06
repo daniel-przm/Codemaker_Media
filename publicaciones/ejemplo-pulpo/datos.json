@@ -1,0 +1,24 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "FormStudio"
+  },
+  "proyecto": "Pulpo",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Educación Plástica",
+    "Ciencias Naturales",
+    "Extraescolares"
+  ],
+  "etapas": [
+    "ESO",
+    "Bachillerato"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "form-pulpo-brazo"
+}

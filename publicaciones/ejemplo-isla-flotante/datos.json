@@ -1,0 +1,23 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "VoxelStudio"
+  },
+  "proyecto": "Isla flotante",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Educación Plástica",
+    "Extraescolares"
+  ],
+  "etapas": [
+    "Primaria",
+    "ESO"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "voxel-isla-flotante"
+}

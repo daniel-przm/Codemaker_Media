@@ -1,0 +1,13 @@
+Un robot que clasifica por colores, sin contar nada 🤖🎨
+
+Avanza hasta tener un totem delante, lo coge con la garra, le pregunta a su sensor de color de qué color es y lo deja en su lado: los morados a la izquierda y los azules a la derecha. Y vuelta a empezar.
+
+No sabe cuántos hay ni dónde están: repite avanzar, coger, mirar, decidir y soltar. Sensores, actuadores y una condición, en el simulador de RoboticStudio, sin comprar ni un robot.
+
+¿Tus alumnos sabrían programarlo para que funcione con cualquier orden?
+
+💡 Idea para clase: cambiar el orden de los totems y comprobar que el programa los sigue clasificando sin tocarlo.
+
+Este ejemplo está en la Galería de ejemplos de Codemaker 3D. Pruébalo gratis en codemaker.es
+
+#claustrovirtual #roboticaeducativa #pensamientocomputacional #sensores #tecnologiaeso #programacion #steam

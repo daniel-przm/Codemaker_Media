@@ -1,0 +1,22 @@
+{
+  "plantilla": "ejemplo",
+  "studio": {
+    "nombre": "VoxelStudio"
+  },
+  "proyecto": "Animales de la selva",
+  "imagen": "img/fotograma.png",
+  "areas": [
+    "Ciencias Naturales",
+    "Educación Plástica"
+  ],
+  "etapas": [
+    "Primaria"
+  ],
+  "fotogramas": "fotogramas",
+  "fps": 30,
+  "recuadro": {
+    "ancho": 1080,
+    "arriba": 430
+  },
+  "toma": "voxel-selva"
+}

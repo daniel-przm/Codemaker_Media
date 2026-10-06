@@ -39,6 +39,20 @@ va en `datos`, que devuelve `preparar`.
   como el de edición al entrar en una figura; en Robotic, elemento a elemento
   (`robotic-laberinto.mjs`). En Code y en Game no: el código y los
   bocadillos son parte de lo que se enseña.
+- **En 4:5, más lejos de lo que parece.** Los primeros planos salieron casi
+  todos cortados a la primera (la cabeza del perro, la del pulpo, el tejado de
+  la isla), y el plano final con el `camara` del catálogo, que es apaisado,
+  corta los lados. Y la portada sale del 70 % de la toma: si la escena se lee
+  mejor entera (la isla, el castillo, el parque), se copia a
+  `img/fotograma.png` un fotograma del final y se vuelve a hacer el `render`.
+- **Voxel, cubo a cubo en orden de apoyo** (`voxel-isla-flotante` y sus tres
+  hermanas): cada cubo nuevo toca a uno ya puesto, y el clic va en la cara
+  compartida, como en el studio. Lo calcula `preparar` a partir de lo que se
+  quita, así que vale para cualquier pieza.
+- **Si el ejemplo sale en el anuncio**, el Reel enseña otro gesto: el pulpo
+  estira un brazo (el anuncio sube la coronilla) y el clasificador corre
+  entero (el anuncio, el primer totem de cerca). Y la toma lleva otro `id`
+  que el plano del showreel.
 - **Code, con `ESCALA=1`** (`ESCALA=1 npm run grabar -- …`): a la escala de
   siempre (1,5) el primer fotograma de la máquina tarda más de los 30 s que
   espera la captura y la grabación se para. Es casi todo texto de interfaz: a
