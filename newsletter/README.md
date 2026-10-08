@@ -75,6 +75,14 @@ modelo: `2026-10-estado-de-codemaker/correo.html`.
 
 - **Tablas y estilos en línea**: es lo único que Gmail respeta. Ni `<style>`,
   ni SVG, ni fuentes web.
+- **Sin `@media`, pero con dos columnas que se apilan en el móvil.** Cada
+  columna es un `<div style="display:inline-block;width:100%;max-width:…px">`
+  dentro de una celda con `font-size:0` (si no, el espacio entre los dos `div`
+  los separa). Si caben las dos, van en fila; si no, una debajo de otra. Así
+  están las tarjetas de los studios en `bienvenida/correo.html`: texto a la
+  izquierda y captura a la derecha en el ordenador, la captura debajo y más
+  grande en el móvil. Las dos `max-width` tienen que sumar menos que el ancho
+  de la tarjeta (264 + 240 en una de 508).
 - **Fondo blanco con los colores de la aplicación**: azul `#007AFB`, tarjetas
   `#f9fafb`, y el color de cada studio de su `STUDIO_CONFIG`.
 - **La tipografía es la del sistema.** Gmail no carga fuentes web, así que la
