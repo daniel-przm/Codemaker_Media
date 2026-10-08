@@ -25,6 +25,37 @@ newsletter/<AAAA-MM-tema>/
 4. **Se envía**: abrir `correo.html` en Chrome, Ctrl+A, Ctrl+C y Ctrl+V en un
    correo nuevo de Gmail. Primero a uno mismo, y mirarlo también en el móvil.
 
+## Cómo se escribe
+
+Así quedó la de octubre de 2026 después de que Dani la retocara a mano. Es el
+modelo: `2026-10-estado-de-codemaker/correo.html`.
+
+- **La firma Dani, en primera persona y cercano.** Saludo «¡Hola, profes!»,
+  presentación corta («Soy Dani, de Codemaker») y cierre «¡Seguimos!» con
+  «Daniel Pérez · Codemaker 3D». No es un comunicado de empresa.
+- **A los lectores se les trata de vosotros, en todo el correo.** «Os cuento»,
+  «podéis», «encendéis y apagáis». Ni «tú» ni imperativos en singular. La única
+  excepción es el pie («respóndeme y te quito de la lista»).
+- **Que se pueda contestar se dice dos veces, y en negrita**: en la
+  introducción («a diferencia de otras newsletters que recibís, **a esta sí
+  podéis contestar**») y otra vez en el cierre («Y recordad: **a esta newsletter
+  sí podéis contestar**… dadle a "Responder"»). Para Dani es lo más importante
+  del correo.
+- **El estado de cada studio se cuenta con franqueza**: «Os lo contamos tal
+  cual». Las etiquetas son *Estable* (verde) y *En desarrollo* (naranja). Si un
+  studio está en desarrollo, se dice lo que ya se puede hacer y lo que falta.
+- **Frases cortas y concretas, para un docente.** Cada punto lleva un arranque
+  en negrita y una frase que dice qué hace el profesor («Asignáis un trabajo…
+  y las corregís con nota y comentarios»). Sin jerga técnica: «modelos 3D», no
+  «assets»; «comentarios», no «feedback»; «el alumnado», «los profes».
+- **Lo que viene, con detalle tangible** entre paréntesis cuando ayuda
+  («línea del tiempo, fotogramas clave, rigging con huesos...»).
+- **Los planes, en un recuadro BASIC/PRO** con lo esencial y la prueba de 14
+  días sin tarjeta, recordando que las clases se guardan. Para centros, formación
+  o más de 150 alumnos: «escribidme y lo vemos».
+- **Ortografía con cuidado**: tildes en los verbos de vosotros (activáis,
+  podéis) y en «básico», «usándose»… Fue lo que más se escapó en el borrador.
+
 ## Cómo está hecho el HTML
 
 - **Tablas y estilos en línea**: es lo único que Gmail respeta. Ni `<style>`,

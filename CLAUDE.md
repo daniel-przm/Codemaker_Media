@@ -28,3 +28,9 @@ que testear: se comprueba mirando la imagen o el vídeo antes de subirlo.
 
 Las de `README.md` («Normas de contenido»): sin planes, precios ni licencias;
 «Pruébalo gratis» sí; los ejemplos se presentan como lo que son; @codemaker_3d.
+
+## La newsletter
+
+Los correos a los usuarios viven en `newsletter/`. Antes de escribir uno, lee
+`newsletter/README.md`: el procedimiento y, sobre todo, «Cómo se escribe», el
+estilo que Dani fijó en la de octubre de 2026.
