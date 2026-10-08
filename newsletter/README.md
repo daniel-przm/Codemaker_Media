@@ -11,6 +11,10 @@ newsletter/<AAAA-MM-tema>/
 └── img/            La marca y las mascotas, en PNG
 ```
 
+Una al mes. Y aparte, `bienvenida/correo.html`: el que se manda a mano a cada
+profe que se registra. Ese no lleva `img/` propia: usa las de la de octubre de
+2026, ya fijadas a su SHA. Antes de enviarlo se cambia **[Nombre]**.
+
 ## Cómo se hace
 
 1. **Las imágenes**: `node newsletter/scripts/generar-imagenes.mjs newsletter/<correo>`.
@@ -22,8 +26,14 @@ newsletter/<AAAA-MM-tema>/
    ese commit, como hace Metricool: así un correo ya enviado no cambia aunque se
    regeneren las imágenes después.
    `https://raw.githubusercontent.com/daniel-przm/Codemaker_Media/<sha>/newsletter/<correo>/img/voxel.png`
-4. **Se envía**: abrir `correo.html` en Chrome, Ctrl+A, Ctrl+C y Ctrl+V en un
-   correo nuevo de Gmail. Primero a uno mismo, y mirarlo también en el móvil.
+4. **Se envía**: abrir `correo.html` en Chrome **con doble clic** —tiene que
+   verse el correo, no el código—, Ctrl+A, Ctrl+C y Ctrl+V en un correo nuevo
+   de Gmail. Copiado desde un editor, desde GitHub o desde `raw.…`, Gmail
+   recibe el código fuente y lo enseña tal cual (pasó en octubre de 2026).
+   Primero a uno mismo, y mirarlo también en el móvil.
+5. **Destinatarios**: uno mismo en «Para» y los profes en **CCO**. Nunca en CC:
+   cada uno vería los correos de los demás, y «Responder a todos» se lo
+   mandaría a todos.
 
 ## Cómo se escribe
 
@@ -36,6 +46,8 @@ modelo: `2026-10-estado-de-codemaker/correo.html`.
 - **A los lectores se les trata de vosotros, en todo el correo.** «Os cuento»,
   «podéis», «encendéis y apagáis». Ni «tú» ni imperativos en singular. La única
   excepción es el pie («respóndeme y te quito de la lista»).
+- **La bienvenida es la excepción: va a una sola persona, así que de tú**
+  («a este sí puedes contestar», «escríbeme»). Lo demás, igual.
 - **Que se pueda contestar se dice dos veces, y en negrita**: en la
   introducción («a diferencia de otras newsletters que recibís, **a esta sí
   podéis contestar**») y otra vez en el cierre («Y recordad: **a esta newsletter
