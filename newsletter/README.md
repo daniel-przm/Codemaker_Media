@@ -12,8 +12,11 @@ newsletter/<AAAA-MM-tema>/
 ```
 
 Una al mes. Y aparte, `bienvenida/correo.html`: el que se manda a mano a cada
-profe que se registra. Ese no lleva `img/` propia: usa las de la de octubre de
-2026, ya fijadas a su SHA. Antes de enviarlo se cambia **[Nombre]**.
+profe que se registra. Usa la marca y las mascotas de la de octubre de 2026,
+ya fijadas a su SHA, y en su `img/` lleva un ejemplo de la Galería por studio
+(de `ejemplos/capturas/` de la aplicación), elegido **para que no sea ninguno de
+los que enseña la landing** (codemaker.es): quien se acaba de registrar ya los
+ha visto. Antes de enviarlo se cambia **[Nombre]**.
 
 ## Cómo se hace
 
